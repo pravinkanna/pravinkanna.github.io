@@ -1,8 +1,9 @@
 $primary-color: #000;
 $secondary-color: #eece1a;
 $show-home-image: true;
-$home-image: url(../../img/code-background-1.jpg);
-$background-opacity: 0.75;
+$home-image: url("../../img/code-background-1.jpg");
+$portrait-image: url("../../img/portrait.jpg");
+$background-opacity: 0.7;
 
 @mixin easeOut {
   transition: all 0.5s ease-out;
@@ -26,5 +27,30 @@ $background-opacity: 0.75;
         background: rgba($primary-color, $background-opacity);
       }
     }
+  }
+}
+
+//Media Queries
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media screen and (min-width: 501px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaXl {
+  @media screen and (min-width: 1171px) {
+    @content;
   }
 }
