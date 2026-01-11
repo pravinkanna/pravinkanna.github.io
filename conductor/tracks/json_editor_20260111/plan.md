@@ -12,7 +12,7 @@ This plan outlines the steps to create a split-view JSON utility at `/tools/json
 ## Phase 2: Core Logic - Validation and Formatting
 - [x] Task: Implement the "Validate" function using `JSON.parse` and display error/success messages. 1b5e6b8
 - [x] Task: Implement "Prettify" logic with support for dynamic indentation (2 spaces, 4 spaces, tabs). 45da94b
-- [ ] Task: Implement "Minify" logic (removing whitespace).
+- [x] Task: Implement "Minify" logic (removing whitespace). c30575d
 - [ ] Task: Implement "Stringify" logic (outputting as an escaped string).
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Core Logic - Validation and Formatting' (Protocol in workflow.md)
 
