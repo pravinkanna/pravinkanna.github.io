@@ -2,10 +2,10 @@
 
 This plan outlines the steps to integrate the Wealth Journey tool into the portfolio website by creating a dedicated Tools directory page and updating the site's navigation.
 
-## Phase 1: Infrastructure and Organization
+## Phase 1: Infrastructure and Organization [checkpoint: e68872b]
 - [x] Task: Create `tools/index.html` (18cecfa) as the directory for all tools.
-- [ ] Task: Ensure `tools/wealth-journey/` assets (CSS, JS) are correctly linked for the new path.
-- [ ] Task: Conductor - User Manual Verification 'Infrastructure and Organization' (Protocol in workflow.md)
+- [x] Task: Ensure `tools/wealth-journey/` assets (manual) (CSS, JS) are correctly linked for the new path.
+- [x] Task: Conductor - User Manual Verification 'Infrastructure and Organization' (manual) (Protocol in workflow.md)
 
 ## Phase 2: Navigation Integration
 - [ ] Task: Update the desktop navigation menu in `index.html` to include a "Tools" link.
