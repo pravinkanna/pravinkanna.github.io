@@ -11,7 +11,7 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
 ## Phase 2: Core Layout and Hero Section
-- [ ] Task: Build Navigation Bar
+- [x] Task: Build Navigation Bar e8cea18
     - [ ] Sub-task: Create a responsive navbar with links (Home, About, Skills, Projects, Blog).
     - [ ] Sub-task: Implement mobile menu toggle using Vanilla JS (replace logic from `js/main.js`).
 - [ ] Task: Build Hero Section
