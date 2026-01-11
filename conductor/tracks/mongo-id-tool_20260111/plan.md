@@ -7,7 +7,7 @@
 
 ## Phase 2: Core Logic Development (TDD)
 - [x] Task: Setup test environment for utility functions (using a simple test runner like the one in `json-editor`). d69363f
-- [ ] Task: Implement `isValidObjectID(oid)` validation logic with tests.
+- [x] Task: Implement `isValidObjectID(oid)` validation logic with tests. fc3e27f
 - [ ] Task: Implement `extractTimestamp(oid)` logic (extracts date from first 8 hex chars) with tests.
 - [ ] Task: Implement `generateObjectID(date)` logic with tests.
 - [ ] Task: Implement `getRelativeTime(date)` helper (e.g., "5 mins ago") with tests.
