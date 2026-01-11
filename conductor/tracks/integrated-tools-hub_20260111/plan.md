@@ -8,8 +8,8 @@ This plan outlines the steps to integrate the Wealth Journey tool into the portf
 - [x] Task: Conductor - User Manual Verification 'Infrastructure and Organization' (manual) (Protocol in workflow.md)
 
 ## Phase 2: Navigation Integration
-- [ ] Task: Update the desktop navigation menu in `index.html` to include a "Tools" link.
-- [ ] Task: Update the mobile navigation menu in `index.html` to include a "Tools" link.
+- [x] Task: Update the desktop navigation menu (f6b7012) in `index.html` to include a "Tools" link.
+- [x] Task: Update the mobile navigation menu (f6b7012) in `index.html` to include a "Tools" link.
 - [ ] Task: Conductor - User Manual Verification 'Navigation and Layout' (Protocol in workflow.md)
 
 ## Phase 3: Tools Hub UI Implementation
