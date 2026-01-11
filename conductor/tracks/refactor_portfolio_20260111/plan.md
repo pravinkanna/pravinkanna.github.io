@@ -23,7 +23,7 @@
 - [x] Task: Implement Skills Matrix 39f9364
     - [ ] Sub-task: Create a grid layout for skills.
     - [ ] Sub-task: Style skill items as "tags" or "chips" with terminal-like aesthetics.
-- [ ] Task: Implement Professional Timeline
+- [x] Task: Implement Professional Timeline 25e7b15
     - [ ] Sub-task: Build a vertical timeline component using Tailwind flex/grid utilities.
     - [ ] Sub-task: Migrate content from the old `index.html` to the new structure.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md)
