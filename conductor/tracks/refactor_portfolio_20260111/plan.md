@@ -28,7 +28,7 @@
     - [ ] Sub-task: Migrate content from the old `index.html` to the new structure.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md)
 
-## Phase 4: Footer and Cleanup
+## Phase 4: Footer and Cleanup [checkpoint: e53328a]
 - [x] Task: Build Footer 19d7dec
     - [ ] Sub-task: Add social media links (GitHub, LinkedIn) and copyright info.
 - [x] Task: Final Review and Cleanup 93cdc01
