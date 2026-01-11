@@ -68,6 +68,48 @@ const tests = [
         name: 'generateObjectID - Invalid input',
         fn: () => MongoIDConverter.generateObjectID('not a date'),
         expected: ''
+    },
+    // getRelativeTime tests
+    {
+        name: 'getRelativeTime - Just now',
+        fn: () => MongoIDConverter.getRelativeTime(new Date()),
+        expected: 'just now'
+    },
+    {
+        name: 'getRelativeTime - 5 minutes ago',
+        fn: () => {
+            const date = new Date();
+            date.setMinutes(date.getMinutes() - 5);
+            return MongoIDConverter.getRelativeTime(date);
+        },
+        expected: '5 minutes ago'
+    },
+    {
+        name: 'getRelativeTime - 2 hours ago',
+        fn: () => {
+            const date = new Date();
+            date.setHours(date.getHours() - 2);
+            return MongoIDConverter.getRelativeTime(date);
+        },
+        expected: '2 hours ago'
+    },
+    {
+        name: 'getRelativeTime - 3 days ago',
+        fn: () => {
+            const date = new Date();
+            date.setDate(date.getDate() - 3);
+            return MongoIDConverter.getRelativeTime(date);
+        },
+        expected: '3 days ago'
+    },
+    {
+        name: 'getRelativeTime - 1 year ago',
+        fn: () => {
+            const date = new Date();
+            date.setFullYear(date.getFullYear() - 1);
+            return MongoIDConverter.getRelativeTime(date);
+        },
+        expected: '1 year ago'
     }
 ];
 
