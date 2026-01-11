@@ -15,9 +15,9 @@
 
 ## Phase 3: UI Implementation & Integration
 - [x] Task: Build `index.html` with Tailwind CSS, shared theme, and responsive layout (Input vs Output panels). ded8a46
-- [ ] Task: Integrate `mongo-id-converter.js` with the UI for real-time conversion.
-- [ ] Task: Implement "Copy to Clipboard" functionality for all output fields.
-- [ ] Task: Implement "Sample ObjectID" and "Use Current Time" helper buttons.
+- [x] Task: Integrate `mongo-id-converter.js` with the UI for real-time conversion. f78366f
+- [x] Task: Implement "Copy to Clipboard" functionality for all output fields. f78366f
+- [x] Task: Implement "Sample ObjectID" and "Use Current Time" helper buttons. f78366f
 - [ ] Task: Conductor - User Manual Verification 'UI Implementation & Integration' (Protocol in workflow.md)
 
 ## Phase 4: Final Polish & Verification
