@@ -10,7 +10,7 @@
 - [x] Task: Implement `isValidObjectID(oid)` validation logic with tests. fc3e27f
 - [x] Task: Implement `extractTimestamp(oid)` logic (extracts date from first 8 hex chars) with tests. 5d6a954
 - [x] Task: Implement `generateObjectID(date)` logic with tests. f981568
-- [ ] Task: Implement `getRelativeTime(date)` helper (e.g., "5 mins ago") with tests.
+- [x] Task: Implement `getRelativeTime(date)` helper (e.g., "5 mins ago") with tests. 0b5fd65
 - [ ] Task: Conductor - User Manual Verification 'Core Logic Development' (Protocol in workflow.md)
 
 ## Phase 3: UI Implementation & Integration
