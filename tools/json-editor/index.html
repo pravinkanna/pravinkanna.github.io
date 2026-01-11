@@ -145,6 +145,9 @@
                         <button id="btn-stringify" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Escape JSON string">
                             Stringify
                         </button>
+                        <button id="btn-unstringify" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Unescape JSON string">
+                            Unstringify
+                        </button>
                         <div class="hidden lg:block w-px h-8 bg-slate-800 my-1"></div>
                         <button id="btn-clear" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-900 border border-red-900/30 text-red-400/70 rounded text-xs font-mono hover:bg-red-900/20 hover:text-red-400 transition-all whitespace-nowrap" title="Clear all fields">
                             Clear
@@ -247,6 +250,20 @@
                 } catch (e) {
                     return { valid: false, message: e.message };
                 }
+            },
+            unstringifyJSON(input) {
+                if (!input || input.trim() === '') {
+                    return { valid: false, message: 'Input is empty' };
+                }
+                try {
+                    const parsed = JSON.parse(input);
+                    if (typeof parsed !== 'string') {
+                        return { valid: false, message: 'Input is not a stringified JSON' };
+                    }
+                    return { valid: true, output: parsed };
+                } catch (e) {
+                    return { valid: false, message: e.message };
+                }
             }
         };
 
@@ -260,6 +277,7 @@
         const btnPrettify = document.getElementById('btn-prettify');
         const btnMinify = document.getElementById('btn-minify');
         const btnStringify = document.getElementById('btn-stringify');
+        const btnUnstringify = document.getElementById('btn-unstringify');
         const btnClear = document.getElementById('btn-clear');
         const btnCopy = document.getElementById('btn-copy');
         const btnDownload = document.getElementById('btn-download');
@@ -380,6 +398,23 @@
             if (result.valid) {
                 jsonOutput.value = result.output;
                 updateStatus('JSON stringified successfully', 'success');
+                jsonInput.classList.remove('border-red-900/50');
+                jsonInput.classList.add('border-green-900/50');
+            } else {
+                updateStatus(result.message, 'error');
+                jsonInput.classList.remove('border-green-900/50');
+                jsonInput.classList.add('border-red-900/50');
+            }
+        });
+
+        // Event: Unstringify
+        btnUnstringify.addEventListener('click', () => {
+            const input = jsonInput.value;
+            const result = Logic.unstringifyJSON(input);
+            
+            if (result.valid) {
+                jsonOutput.value = result.output;
+                updateStatus('JSON unstringified successfully', 'success');
                 jsonInput.classList.remove('border-red-900/50');
                 jsonInput.classList.add('border-green-900/50');
             } else {

@@ -93,3 +93,20 @@ describe('JSON Editor Logic - Stringifying', () => {
         expect(result.message).toBeDefined();
     });
 });
+
+describe('JSON Editor Logic - Unstringifying', () => {
+    test('should unstringify (unescape) a JSON string', () => {
+        const { unstringifyJSON } = require('./json-editor.logic');
+        const input = '"{\\"a\\":1}"';
+        const result = unstringifyJSON(input);
+        expect(result.valid).toBe(true);
+        expect(result.output).toBe('{"a":1}');
+    });
+
+    test('should return error if input is not a valid escaped JSON string', () => {
+        const { unstringifyJSON } = require('./json-editor.logic');
+        const input = 'not a string';
+        const result = unstringifyJSON(input);
+        expect(result.valid).toBe(false);
+    });
+});

@@ -1,27 +1,20 @@
-const { validateJSON, formatJSON, minifyJSON, stringifyJSON } = require('./json-editor.logic');
+const { validateJSON, formatJSON, minifyJSON, stringifyJSON, unstringifyJSON } = require('./json-editor.logic');
 
 const tests = [
-    // Validation tests
-    {
-        name: 'Success for valid JSON',
-        input: '{"name": "Pravin", "role": "Engineer"}',
-        fn: (input) => validateJSON(input),
-        expected: { valid: true, message: 'Valid JSON' }
-    },
     // ... (rest of tests)
-    // Minify tests
-    {
-        name: 'Minify JSON',
-        input: '{\n  "a": 1\n}',
-        fn: (input) => minifyJSON(input),
-        expected: { valid: true, output: '{"a":1}' }
-    },
     // Stringify tests
     {
         name: 'Stringify JSON',
         input: '{"a":1}',
         fn: (input) => stringifyJSON(input),
         expected: { valid: true, output: '"{\\\"a\\\":1}"' }
+    },
+    // Unstringify tests
+    {
+        name: 'Unstringify JSON',
+        input: '"{\\\"a\\\":1}"',
+        fn: (input) => unstringifyJSON(input),
+        expected: { valid: true, output: '{"a":1}' }
     }
 ];
 

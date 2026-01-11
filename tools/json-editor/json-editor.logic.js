@@ -78,6 +78,27 @@ function stringifyJSON(input) {
     }
 }
 
+/**
+ * Unstringifies a JSON string (parses an escaped string).
+ * @param {string} input - The escaped JSON string.
+ * @returns {Object} - An object with 'valid' (boolean), 'output' (string), and optional 'message'.
+ */
+function unstringifyJSON(input) {
+    if (!input || input.trim() === '') {
+        return { valid: false, message: 'Input is empty' };
+    }
+
+    try {
+        const parsed = JSON.parse(input);
+        if (typeof parsed !== 'string') {
+            return { valid: false, message: 'Input is not a stringified JSON' };
+        }
+        return { valid: true, output: parsed };
+    } catch (e) {
+        return { valid: false, message: e.message };
+    }
+}
+
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { validateJSON, formatJSON, minifyJSON, stringifyJSON };
+    module.exports = { validateJSON, formatJSON, minifyJSON, stringifyJSON, unstringifyJSON };
 }
