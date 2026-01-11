@@ -2,12 +2,11 @@
 
 ## Frontend
 - **HTML5:** Semantic markup for the structure of the portfolio.
-- **SCSS (Sass):** Advanced styling with variables, nesting, and partials.
+- **Tailwind CSS:** Utility-first CSS framework for rapid UI development and modern styling.
 - **Vanilla JavaScript:** For DOM manipulation and interactivity (e.g., mobile menu toggle).
 
 ## Build & Tooling
 - **npm:** Package management for development dependencies.
-- **node-sass:** Compiles SCSS files to CSS for production.
 - **Git:** Version control for project management.
 
 ## Deployment & Hosting
