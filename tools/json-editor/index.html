@@ -359,6 +359,26 @@
             }
         });
 
+        // Event: Copy to Clipboard
+        btnCopy.addEventListener('click', () => {
+            const content = jsonOutput.value;
+            if (!content) return;
+            
+            navigator.clipboard.writeText(content).then(() => {
+                const originalText = btnCopy.textContent;
+                btnCopy.textContent = 'Copied!';
+                btnCopy.classList.add('text-accent');
+                
+                setTimeout(() => {
+                    btnCopy.textContent = originalText;
+                    btnCopy.classList.remove('text-accent');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                updateStatus('Failed to copy to clipboard', 'error');
+            });
+        });
+
         // Mobile Menu Toggle Logic
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
