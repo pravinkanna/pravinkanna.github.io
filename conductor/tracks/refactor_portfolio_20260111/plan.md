@@ -10,7 +10,7 @@
     - [ ] Sub-task: Import and configure Google Fonts (e.g., Fira Code/Roboto Mono).
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
-## Phase 2: Core Layout and Hero Section
+## Phase 2: Core Layout and Hero Section [checkpoint: 26614ae]
 - [x] Task: Build Navigation Bar e8cea18
     - [ ] Sub-task: Create a responsive navbar with links (Home, About, Skills, Projects, Blog).
     - [ ] Sub-task: Implement mobile menu toggle using Vanilla JS (replace logic from `js/main.js`).
