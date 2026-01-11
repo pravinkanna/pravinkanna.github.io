@@ -30,6 +30,28 @@ const tests = [
         name: 'isValidObjectID - Non-string',
         fn: () => MongoIDConverter.isValidObjectID(null),
         expected: false
+    },
+    // extractTimestamp tests
+    {
+        name: 'extractTimestamp - Valid ObjectID',
+        fn: () => {
+            const date = MongoIDConverter.extractTimestamp('507f1f77bcf86cd799439011');
+            return date instanceof Date ? date.toISOString() : null;
+        },
+        expected: '2012-10-17T21:13:27.000Z'
+    },
+    {
+        name: 'extractTimestamp - Recent ObjectID',
+        fn: () => {
+            const date = MongoIDConverter.extractTimestamp('659f8a800000000000000000');
+            return date instanceof Date ? date.toISOString() : null;
+        },
+        expected: '2024-01-11T06:28:16.000Z'
+    },
+    {
+        name: 'extractTimestamp - Invalid ObjectID',
+        fn: () => MongoIDConverter.extractTimestamp('invalid'),
+        expected: null
     }
 ];
 

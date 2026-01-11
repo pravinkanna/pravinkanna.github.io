@@ -9,8 +9,9 @@ const MongoIDConverter = {
     },
 
     extractTimestamp(oid) {
-        // TODO: Implementation
-        return null;
+        if (!this.isValidObjectID(oid)) return null;
+        const timestamp = parseInt(oid.substring(0, 8), 16);
+        return new Date(timestamp * 1000);
     },
 
     generateObjectID(date) {
