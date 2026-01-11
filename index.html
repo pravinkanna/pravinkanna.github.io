@@ -59,6 +59,17 @@
             border-color: rgba(6, 182, 212, 0.4);
             background-color: rgba(30, 41, 59, 0.8);
         }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #0f172a;
+            border: 2px solid #06b6d4;
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-200 font-sans antialiased">
@@ -148,6 +159,76 @@
                                 <a href="#contact" class="bg-slate-800/50 border border-slate-700 text-slate-300 px-6 py-3 rounded hover:bg-slate-700 transition-all">
                                     cat contact.txt
                                 </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About / Timeline Section -->
+            <section id="about" class="py-24 border-t border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="mb-16">
+                        <h2 class="text-accent font-mono text-lg mb-2">> cat about_me.md</h2>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white">Experience & Education</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                        <!-- Experience -->
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-8 flex items-center gap-2">
+                                <span class="text-accent font-mono">01.</span> Professional Experience
+                            </h4>
+                            <div class="relative pl-8 border-l border-slate-800 space-y-12">
+                                <div class="timeline-item relative">
+                                    <div class="absolute -left-[42px] top-0 font-mono text-xs text-slate-500 rotate-0 md:-rotate-90 md:origin-top-right md:translate-y-4 md:translate-x-[-10px]">
+                                        2023 - PRESENT
+                                    </div>
+                                    <h5 class="text-lg font-bold text-white">Software Developer</h5>
+                                    <p class="text-accent font-mono text-sm mb-2">Freelance / Personal Projects</p>
+                                    <p class="text-slate-400 text-sm leading-relaxed">
+                                        Architecting and building responsive web applications with modern tech stacks. Focused on performance optimization and clean, maintainable code.
+                                    </p>
+                                </div>
+                                <div class="timeline-item relative">
+                                    <div class="absolute -left-[42px] top-0 font-mono text-xs text-slate-500 rotate-0 md:-rotate-90 md:origin-top-right md:translate-y-4 md:translate-x-[-10px]">
+                                        2022 - 2023
+                                    </div>
+                                    <h5 class="text-lg font-bold text-white">Junior Web Developer</h5>
+                                    <p class="text-accent font-mono text-sm mb-2">Tech Solutions Inc.</p>
+                                    <p class="text-slate-400 text-sm leading-relaxed">
+                                        Collaborated with a cross-functional team to deliver high-quality web solutions. Specialized in frontend development using React and Tailwind CSS.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education -->
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-8 flex items-center gap-2">
+                                <span class="text-accent font-mono">02.</span> Education
+                            </h4>
+                            <div class="relative pl-8 border-l border-slate-800 space-y-12">
+                                <div class="timeline-item relative">
+                                    <div class="absolute -left-[42px] top-0 font-mono text-xs text-slate-500 rotate-0 md:-rotate-90 md:origin-top-right md:translate-y-4 md:translate-x-[-10px]">
+                                        2020 - 2024
+                                    </div>
+                                    <h5 class="text-lg font-bold text-white">B.Tech Computer Science</h5>
+                                    <p class="text-accent font-mono text-sm mb-2">University of Technology</p>
+                                    <p class="text-slate-400 text-sm leading-relaxed">
+                                        Focused on Data Structures, Algorithms, and Software Engineering principles. Graduated with honors.
+                                    </p>
+                                </div>
+                                <div class="timeline-item relative">
+                                    <div class="absolute -left-[42px] top-0 font-mono text-xs text-slate-500 rotate-0 md:-rotate-90 md:origin-top-right md:translate-y-4 md:translate-x-[-10px]">
+                                        2019 - 2020
+                                    </div>
+                                    <h5 class="text-lg font-bold text-white">Higher Secondary Education</h5>
+                                    <p class="text-accent font-mono text-sm mb-2">Public School</p>
+                                    <p class="text-slate-400 text-sm leading-relaxed">
+                                        Completed with a focus on Mathematics and Physics.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
