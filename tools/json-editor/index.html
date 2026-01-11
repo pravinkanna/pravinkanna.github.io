@@ -285,10 +285,40 @@
             statusBar.textContent = '';
         }
 
-        // Event: Input stats
+        // Helper: Debounce
+        function debounce(func, timeout = 500) {
+            let timer;
+            return (...args) => {
+                clearTimeout(timer);
+                timer = setTimeout(() => { func.apply(this, args); }, timeout);
+            };
+        }
+
+        const realTimeValidate = debounce(() => {
+            const input = jsonInput.value;
+            if (!input.trim()) {
+                clearStatus();
+                jsonInput.classList.remove('border-green-900/50', 'border-red-900/50');
+                return;
+            }
+            
+            const result = Logic.validateJSON(input);
+            if (result.valid) {
+                updateStatus(result.message, 'success');
+                jsonInput.classList.remove('border-red-900/50');
+                jsonInput.classList.add('border-green-900/50');
+            } else {
+                updateStatus(result.message, 'error');
+                jsonInput.classList.remove('border-green-900/50');
+                jsonInput.classList.add('border-red-900/50');
+            }
+        });
+
+        // Event: Input stats and real-time validation
         jsonInput.addEventListener('input', () => {
             const length = jsonInput.value.length;
             inputStats.textContent = `${length} characters`;
+            realTimeValidate();
         });
 
         // Event: Validate
