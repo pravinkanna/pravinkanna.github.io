@@ -110,58 +110,58 @@
                 </div>
 
                 <!-- Tool Container -->
-                <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 min-h-[600px]">
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 min-h-[500px] lg:min-h-[600px]">
                     <!-- Input Panel -->
-                    <div class="flex flex-col space-y-2">
+                    <div class="flex flex-col space-y-2 h-[300px] lg:h-auto">
                         <label for="json-input" class="text-sm font-mono text-slate-400 flex justify-between">
                             <span>Input (Raw JSON)</span>
                             <span id="input-stats" class="text-[10px]">0 characters</span>
                         </label>
                         <textarea id="json-input" 
-                            class="flex-grow bg-slate-800/50 border border-slate-800 rounded-lg p-4 font-mono text-sm text-slate-200 focus:outline-none focus:border-accent/50 resize-none placeholder:text-slate-600"
+                            class="flex-grow bg-slate-800/50 border border-slate-800 rounded-lg p-4 font-mono text-sm text-slate-200 focus:outline-none focus:border-accent/50 resize-none placeholder:text-slate-600 transition-colors"
                             placeholder="Paste your JSON here..."></textarea>
                     </div>
 
                     <!-- Control Panel -->
-                    <div class="flex flex-row lg:flex-col justify-center items-center gap-2 lg:px-2">
-                        <div class="w-full lg:w-auto flex flex-col gap-1 mb-2">
+                    <div class="flex flex-row lg:flex-col justify-center items-center gap-2 lg:px-2 flex-wrap lg:flex-nowrap">
+                        <div class="w-full sm:w-auto lg:w-full flex flex-col gap-1 mb-0 lg:mb-2">
                             <label for="indent-select" class="text-[10px] font-mono text-slate-500 uppercase">Indent</label>
-                            <select id="indent-select" class="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-xs font-mono text-slate-300 focus:outline-none focus:border-accent/50">
+                            <select id="indent-select" class="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-xs font-mono text-slate-300 focus:outline-none focus:border-accent/50 cursor-pointer">
                                 <option value="2">2 Spaces</option>
                                 <option value="4">4 Spaces</option>
                                 <option value="tab">Tabs</option>
                             </select>
                         </div>
-                        <button id="btn-validate" class="w-full lg:w-auto px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Validate JSON">
+                        <button id="btn-validate" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Validate JSON">
                             Validate
                         </button>
                         <div class="hidden lg:block w-px h-8 bg-slate-800 my-2"></div>
-                        <button id="btn-prettify" class="w-full lg:w-auto px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Format JSON">
+                        <button id="btn-prettify" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Format JSON">
                             Prettify
                         </button>
-                        <button id="btn-minify" class="w-full lg:w-auto px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Minify JSON">
+                        <button id="btn-minify" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Minify JSON">
                             Minify
                         </button>
-                        <button id="btn-stringify" class="w-full lg:w-auto px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Escape JSON string">
+                        <button id="btn-stringify" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Escape JSON string">
                             Stringify
                         </button>
                         <div class="hidden lg:block w-px h-8 bg-slate-800 my-2"></div>
-                        <button id="btn-clear" class="w-full lg:w-auto px-4 py-2 bg-slate-900 border border-red-900/30 text-red-400/70 rounded text-xs font-mono hover:bg-red-900/20 hover:text-red-400 transition-all whitespace-nowrap" title="Clear all fields">
+                        <button id="btn-clear" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-900 border border-red-900/30 text-red-400/70 rounded text-xs font-mono hover:bg-red-900/20 hover:text-red-400 transition-all whitespace-nowrap" title="Clear all fields">
                             Clear
                         </button>
                     </div>
 
                     <!-- Output Panel -->
-                    <div class="flex flex-col space-y-2">
+                    <div class="flex flex-col space-y-2 h-[300px] lg:h-auto">
                         <div class="flex justify-between items-center">
                             <label for="json-output" class="text-sm font-mono text-slate-400">Output</label>
-                            <div class="flex gap-2">
-                                <button id="btn-copy" class="text-[10px] font-mono text-slate-500 hover:text-accent uppercase tracking-wider">Copy</button>
-                                <button id="btn-download" class="text-[10px] font-mono text-slate-500 hover:text-accent uppercase tracking-wider">Download</button>
+                            <div class="flex gap-4">
+                                <button id="btn-copy" class="text-[10px] font-mono text-slate-500 hover:text-accent uppercase tracking-wider transition-colors">Copy</button>
+                                <button id="btn-download" class="text-[10px] font-mono text-slate-500 hover:text-accent uppercase tracking-wider transition-colors">Download</button>
                             </div>
                         </div>
                         <textarea id="json-output" 
-                            class="flex-grow bg-slate-800/20 border border-slate-800 rounded-lg p-4 font-mono text-sm text-slate-400 focus:outline-none resize-none"
+                            class="flex-grow bg-slate-800/20 border border-slate-800 rounded-lg p-4 font-mono text-sm text-slate-400 focus:outline-none resize-none transition-colors"
                             placeholder="Output will appear here..." readonly></textarea>
                     </div>
                 </div>
