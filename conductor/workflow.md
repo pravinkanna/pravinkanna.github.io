@@ -270,9 +270,10 @@ A task is complete when:
 4. Documentation complete (if applicable)
 5. Code passes all configured linting and static analysis checks
 6. Works beautifully on mobile (if applicable)
-7. Implementation notes added to `plan.md`
-8. Changes committed with proper message
-9. Git note with task summary attached to the commit
+7. If a new tool was created, it is added to the tools directory page at `/tools/index.html`
+8. Implementation notes added to `plan.md`
+9. Changes committed with proper message
+10. Git note with task summary attached to the commit
 
 ## Emergency Procedures
 
