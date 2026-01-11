@@ -5,7 +5,7 @@
     - [ ] Sub-task: Set up Tailwind CSS (via CDN for simplicity or minimal CLI if build is preferred).
     - [ ] Sub-task: Create a minimal `tailwind.config.js` to define the custom color palette (dark theme) and font family (monospace).
     - [ ] Sub-task: Create a new `index.html` structure to replace the old one (keep the old one as backup temporarily).
-- [ ] Task: Implement Global Styles & Typography
+- [x] Task: Implement Global Styles & Typography 31a6a96
     - [ ] Sub-task: Apply base styles (dark background, text colors) to the `<body>`.
     - [ ] Sub-task: Import and configure Google Fonts (e.g., Fira Code/Roboto Mono).
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
