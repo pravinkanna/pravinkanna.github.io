@@ -196,6 +196,78 @@
     </div>
 
     <script>
+        // Logic components (matching json-editor.logic.js)
+        const Logic = {
+            validateJSON(input) {
+                if (!input || input.trim() === '') {
+                    return { valid: false, message: 'Input is empty' };
+                }
+                try {
+                    JSON.parse(input);
+                    return { valid: true, message: 'Valid JSON' };
+                } catch (e) {
+                    return { valid: false, message: e.message };
+                }
+            }
+        };
+
+        // DOM Elements
+        const jsonInput = document.getElementById('json-input');
+        const jsonOutput = document.getElementById('json-output');
+        const inputStats = document.getElementById('input-stats');
+        const statusBar = document.getElementById('status-bar');
+        
+        const btnValidate = document.getElementById('btn-validate');
+        const btnPrettify = document.getElementById('btn-prettify');
+        const btnMinify = document.getElementById('btn-minify');
+        const btnStringify = document.getElementById('btn-stringify');
+        const btnClear = document.getElementById('btn-clear');
+        const btnCopy = document.getElementById('btn-copy');
+        const btnDownload = document.getElementById('btn-download');
+        const indentSelect = document.getElementById('indent-select');
+
+        // Helper: Update Status Bar
+        function updateStatus(message, type = 'info') {
+            statusBar.classList.remove('hidden', 'bg-green-900/20', 'text-green-400', 'border-green-900/30', 'bg-red-900/20', 'text-red-400', 'border-red-900/30');
+            
+            if (type === 'success') {
+                statusBar.classList.add('bg-green-900/20', 'text-green-400', 'border-green-900/30');
+            } else if (type === 'error') {
+                statusBar.classList.add('bg-red-900/20', 'text-red-400', 'border-red-900/30');
+            }
+            
+            statusBar.textContent = message;
+            statusBar.classList.remove('hidden');
+        }
+
+        // Helper: Clear Status
+        function clearStatus() {
+            statusBar.classList.add('hidden');
+            statusBar.textContent = '';
+        }
+
+        // Event: Input stats
+        jsonInput.addEventListener('input', () => {
+            const length = jsonInput.value.length;
+            inputStats.textContent = `${length} characters`;
+        });
+
+        // Event: Validate
+        btnValidate.addEventListener('click', () => {
+            const input = jsonInput.value;
+            const result = Logic.validateJSON(input);
+            
+            if (result.valid) {
+                updateStatus(result.message, 'success');
+                jsonInput.classList.remove('border-red-900/50');
+                jsonInput.classList.add('border-green-900/50');
+            } else {
+                updateStatus(result.message, 'error');
+                jsonInput.classList.remove('border-green-900/50');
+                jsonInput.classList.add('border-red-900/50');
+            }
+        });
+
         // Mobile Menu Toggle Logic
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
