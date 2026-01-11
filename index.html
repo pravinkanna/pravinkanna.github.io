@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pravin Kanna | Portfolio</title>
+    <title>Pravinkanna Parthiban | Senior Software Engineer</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configuration for Tailwind CDN -->
@@ -70,6 +70,13 @@
             background-color: #0f172a;
             border: 2px solid #06b6d4;
         }
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            border-color: rgba(6, 182, 212, 0.4);
+            background-color: rgba(30, 41, 59, 0.5);
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-200 font-sans antialiased">
@@ -87,22 +94,19 @@
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-8 font-mono text-sm">
                             <a href="#home" class="hover:text-accent px-3 py-2 transition-colors">Home</a>
-                            <a href="#about" class="hover:text-accent px-3 py-2 transition-colors">About</a>
+                            <a href="#about" class="hover:text-accent px-3 py-2 transition-colors">Experience</a>
                             <a href="#skills" class="hover:text-accent px-3 py-2 transition-colors">Skills</a>
                             <a href="#projects" class="hover:text-accent px-3 py-2 transition-colors">Projects</a>
-                            <a href="#blog" class="hover:text-accent px-3 py-2 transition-colors">Blog</a>
                         </div>
                     </div>
                     <!-- Mobile Menu Button -->
                     <div class="md:hidden">
                         <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none transition-colors" aria-controls="mobile-menu" aria-expanded="false">
                             <span class="sr-only">Open main menu</span>
-                            <!-- Icon when menu is closed -->
-                            <svg id="menu-icon-closed" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <svg id="menu-icon-closed" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
-                            <!-- Icon when menu is open -->
-                            <svg id="menu-icon-opened" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <svg id="menu-icon-opened" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
@@ -114,10 +118,9 @@
             <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-mono text-center">
                     <a href="#home" class="block px-3 py-4 text-base hover:text-accent transition-colors">Home</a>
-                    <a href="#about" class="block px-3 py-4 text-base hover:text-accent transition-colors">About</a>
+                    <a href="#about" class="block px-3 py-4 text-base hover:text-accent transition-colors">Experience</a>
                     <a href="#skills" class="block px-3 py-4 text-base hover:text-accent transition-colors">Skills</a>
                     <a href="#projects" class="block px-3 py-4 text-base hover:text-accent transition-colors">Projects</a>
-                    <a href="#blog" class="block px-3 py-4 text-base hover:text-accent transition-colors">Blog</a>
                 </div>
             </div>
         </nav>
@@ -137,12 +140,10 @@
                         
                         <div class="space-y-2">
                             <p class="text-accent"><span class="text-slate-500">1</span> <span class="text-purple-400">const</span> developer = {</p>
-                            <p class="pl-4 md:pl-8"><span class="text-slate-500">2</span> <span class="text-slate-200">name:</span> <span class="text-green-400">'Pravin Kanna'</span>,</p>
-                            <p class="pl-4 md:pl-8"><span class="text-slate-500">3</span> <span class="text-slate-200">title:</span> <span class="text-green-400">'Software Developer'</span>,</p>
-                            <p class="pl-4 md:pl-8"><span class="text-slate-500">4</span> <span class="text-slate-200">passion:</span> <span class="text-green-400">'Building scalable tech'</span></p>
+                            <p class="pl-4 md:pl-8"><span class="text-slate-500">2</span> <span class="text-slate-200">name:</span> <span class="text-green-400">'Pravinkanna Parthiban'</span>,</p>
+                            <p class="pl-4 md:pl-8"><span class="text-slate-500">3</span> <span class="text-slate-200">title:</span> <span class="text-green-400">'Senior Software Engineer'</span>,</p>
+                            <p class="pl-4 md:pl-8"><span class="text-slate-500">4</span> <span class="text-slate-200">specialization:</span> [<span class="text-green-400">'Golang'</span>, <span class="text-green-400">'Node.js'</span>, <span class="text-green-400">'Kubernetes'</span>]</p>
                             <p class=""><span class="text-slate-500">5</span> };</p>
-                            <p class="text-slate-500">6</p>
-                            <p class=""><span class="text-slate-500">7</span> <span class="text-blue-400">console</span>.<span class="text-yellow-400">log</span>(developer.<span class="text-slate-200">name</span>);</p>
                         </div>
 
                         <div class="mt-12 pt-8 border-t border-slate-800">
@@ -150,14 +151,14 @@
                                 Hello, I'm <span class="text-accent">Pravin</span>.
                             </h1>
                             <p class="text-xl md:text-2xl text-slate-400 font-sans mb-10 max-w-2xl">
-                                Software Developer & Tech Enthusiast focused on building elegant, performant, and accessible user experiences.
+                                Senior Software Engineer focused on building high-performance, distributed systems and scalable cloud infrastructure.
                             </p>
                             <div class="flex flex-wrap gap-4 font-mono text-sm">
                                 <a href="#projects" class="bg-accent/10 border border-accent/30 text-accent px-6 py-3 rounded hover:bg-accent/20 transition-all">
                                     ./view-projects.sh
                                 </a>
-                                <a href="#contact" class="bg-slate-800/50 border border-slate-700 text-slate-300 px-6 py-3 rounded hover:bg-slate-700 transition-all">
-                                    cat contact.txt
+                                <a href="https://github.com/pravinkanna" target="_blank" class="bg-slate-800/50 border border-slate-700 text-slate-300 px-6 py-3 rounded hover:bg-slate-700 transition-all">
+                                    git checkout github
                                 </a>
                             </div>
                         </div>
@@ -165,71 +166,54 @@
                 </div>
             </section>
 
-            <!-- About / Timeline Section -->
+            <!-- Experience / Timeline Section -->
             <section id="about" class="py-24 border-t border-slate-800">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="mb-16">
-                        <h2 class="text-accent font-mono text-lg mb-2">> cat about_me.md</h2>
-                        <h3 class="text-3xl md:text-4xl font-bold text-white">Experience & Education</h3>
+                        <h2 class="text-accent font-mono text-lg mb-2">> cat experience.md</h2>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white">Work Experience</h3>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                        <!-- Experience -->
-                        <div>
-                            <h4 class="text-xl font-bold text-white mb-8 flex items-center gap-2">
-                                <span class="text-accent font-mono">01.</span> Professional Experience
-                            </h4>
-                            <div class="relative pl-8 border-l border-slate-800 space-y-12">
-                                <div class="timeline-item relative">
-                                    <div class="absolute -left-[42px] top-0 font-mono text-xs text-slate-500 rotate-0 md:-rotate-90 md:origin-top-right md:translate-y-4 md:translate-x-[-10px]">
-                                        2023 - PRESENT
-                                    </div>
-                                    <h5 class="text-lg font-bold text-white">Software Developer</h5>
-                                    <p class="text-accent font-mono text-sm mb-2">Freelance / Personal Projects</p>
-                                    <p class="text-slate-400 text-sm leading-relaxed">
-                                        Architecting and building responsive web applications with modern tech stacks. Focused on performance optimization and clean, maintainable code.
-                                    </p>
-                                </div>
-                                <div class="timeline-item relative">
-                                    <div class="absolute -left-[42px] top-0 font-mono text-xs text-slate-500 rotate-0 md:-rotate-90 md:origin-top-right md:translate-y-4 md:translate-x-[-10px]">
-                                        2022 - 2023
-                                    </div>
-                                    <h5 class="text-lg font-bold text-white">Junior Web Developer</h5>
-                                    <p class="text-accent font-mono text-sm mb-2">Tech Solutions Inc.</p>
-                                    <p class="text-slate-400 text-sm leading-relaxed">
-                                        Collaborated with a cross-functional team to deliver high-quality web solutions. Specialized in frontend development using React and Tailwind CSS.
-                                    </p>
-                                </div>
+                    <div class="relative pl-8 border-l border-slate-800 space-y-16 max-w-4xl">
+                        <!-- Vumonic -->
+                        <div class="timeline-item relative">
+                            <div class="absolute -left-[42px] top-0 font-mono text-xs text-slate-500 md:rotate-0 md:bg-slate-900 md:px-2">
+                                JAN 2021 - PRESENT
                             </div>
+                            <h5 class="text-xl font-bold text-white">Senior Software Engineer</h5>
+                            <p class="text-accent font-mono text-sm mb-4">Vumonic Datalabs | Bengaluru, India</p>
+                            <ul class="text-slate-400 text-sm space-y-3 list-disc pl-4">
+                                <li>Led the engineering team of 3 members, managing frontend and DevOps engineers while establishing organization-wide standards.</li>
+                                <li>Designed and implemented an email monitoring system for 3 million users, utilizing IMAP IDLE to achieve real-time updates and eliminate processing delays.</li>
+                                <li>Led successful migration of 80 TiB storage, 30 services, and 5 databases from Oracle Cloud to GCP with zero downtime.</li>
+                                <li>Reduced production errors by 70% by migrating legacy Node.js services to Go 1.23 with strict type checking and Sentry monitoring.</li>
+                                <li>Reduced deployment time by 90% via Docker containerization and Kubernetes automation for 30+ microservices.</li>
+                            </ul>
                         </div>
 
-                        <!-- Education -->
-                        <div>
-                            <h4 class="text-xl font-bold text-white mb-8 flex items-center gap-2">
-                                <span class="text-accent font-mono">02.</span> Education
-                            </h4>
-                            <div class="relative pl-8 border-l border-slate-800 space-y-12">
-                                <div class="timeline-item relative">
-                                    <div class="absolute -left-[42px] top-0 font-mono text-xs text-slate-500 rotate-0 md:-rotate-90 md:origin-top-right md:translate-y-4 md:translate-x-[-10px]">
-                                        2020 - 2024
-                                    </div>
-                                    <h5 class="text-lg font-bold text-white">B.Tech Computer Science</h5>
-                                    <p class="text-accent font-mono text-sm mb-2">University of Technology</p>
-                                    <p class="text-slate-400 text-sm leading-relaxed">
-                                        Focused on Data Structures, Algorithms, and Software Engineering principles. Graduated with honors.
-                                    </p>
-                                </div>
-                                <div class="timeline-item relative">
-                                    <div class="absolute -left-[42px] top-0 font-mono text-xs text-slate-500 rotate-0 md:-rotate-90 md:origin-top-right md:translate-y-4 md:translate-x-[-10px]">
-                                        2019 - 2020
-                                    </div>
-                                    <h5 class="text-lg font-bold text-white">Higher Secondary Education</h5>
-                                    <p class="text-accent font-mono text-sm mb-2">Public School</p>
-                                    <p class="text-slate-400 text-sm leading-relaxed">
-                                        Completed with a focus on Mathematics and Physics.
-                                    </p>
-                                </div>
+                        <!-- Pretva -->
+                        <div class="timeline-item relative">
+                            <div class="absolute -left-[42px] top-0 font-mono text-xs text-slate-500 md:rotate-0 md:bg-slate-900 md:px-2">
+                                OCT 2020 - DEC 2020
                             </div>
+                            <h5 class="text-xl font-bold text-white">Fullstack Developer Intern</h5>
+                            <p class="text-accent font-mono text-sm mb-4">Pretva | Remote</p>
+                            <ul class="text-slate-400 text-sm space-y-3 list-disc pl-4">
+                                <li>Developed a real-time chat system using WebSocket, enhancing user communication efficiency between buyers and suppliers.</li>
+                                <li>Revamped web application UI/UX following provided prototypes to ensure design consistency.</li>
+                            </ul>
+                        </div>
+
+                        <!-- T4TEQ -->
+                        <div class="timeline-item relative">
+                            <div class="absolute -left-[42px] top-0 font-mono text-xs text-slate-500 md:rotate-0 md:bg-slate-900 md:px-2">
+                                JAN 2020 - AUG 2020
+                            </div>
+                            <h5 class="text-xl font-bold text-white">Tutor</h5>
+                            <p class="text-accent font-mono text-sm mb-4">T4TEQ Software Solutions | Tamil Nadu, India</p>
+                            <ul class="text-slate-400 text-sm space-y-3 list-disc pl-4">
+                                <li>Taught programming fundamentals, Python, data structures, and algorithms to 50+ students with a 95% completion rate.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -240,75 +224,147 @@
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="mb-16">
                         <h2 class="text-accent font-mono text-lg mb-2">> ls skills/</h2>
-                        <h3 class="text-3xl md:text-4xl font-bold text-white">Technical Skills</h3>
-                        <p class="text-slate-400 mt-4 max-w-xl">
-                            A non-exhaustive list of the tools and technologies I use to bring ideas to life.
-                        </p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white">Technical Arsenal</h3>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Frontend -->
+                        <!-- Languages -->
                         <div class="skill-card p-6 rounded-lg bg-slate-800/30 border border-slate-800">
-                            <div class="flex items-center gap-3 mb-6">
-                                <div class="p-2 bg-accent/10 rounded">
-                                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                    </svg>
-                                </div>
-                                <h4 class="font-mono font-bold text-white">Frontend</h4>
-                            </div>
+                            <h4 class="font-mono font-bold text-white mb-6 flex items-center gap-2">
+                                <span class="text-accent">01.</span> Languages & Frameworks
+                            </h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">HTML5</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">CSS3</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">JavaScript</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">React</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Tailwind CSS</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">SASS</span>
-                            </div>
-                        </div>
-
-                        <!-- Backend -->
-                        <div class="skill-card p-6 rounded-lg bg-slate-800/30 border border-slate-800">
-                            <div class="flex items-center gap-3 mb-6">
-                                <div class="p-2 bg-accent/10 rounded">
-                                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
-                                    </svg>
-                                </div>
-                                <h4 class="font-mono font-bold text-white">Backend</h4>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Golang</span>
                                 <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Node.js</span>
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">TypeScript</span>
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">JavaScript</span>
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Python</span>
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">NestJS</span>
                                 <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Express.js</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">MongoDB</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">PostgreSQL</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">REST APIs</span>
                             </div>
                         </div>
 
-                        <!-- DevOps & Tools -->
+                        <!-- Data & Messaging -->
                         <div class="skill-card p-6 rounded-lg bg-slate-800/30 border border-slate-800">
-                            <div class="flex items-center gap-3 mb-6">
-                                <div class="p-2 bg-accent/10 rounded">
-                                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    </svg>
-                                </div>
-                                <h4 class="font-mono font-bold text-white">Tools</h4>
-                            </div>
+                            <h4 class="font-mono font-bold text-white mb-6 flex items-center gap-2">
+                                <span class="text-accent">02.</span> Database & Messaging
+                            </h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Git / GitHub</span>
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">MongoDB</span>
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Redis</span>
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Elasticsearch</span>
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Kafka</span>
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">RabbitMQ</span>
+                            </div>
+                        </div>
+
+                        <!-- Tools & Cloud -->
+                        <div class="skill-card p-6 rounded-lg bg-slate-800/30 border border-slate-800">
+                            <h4 class="font-mono font-bold text-white mb-6 flex items-center gap-2">
+                                <span class="text-accent">03.</span> Cloud & Infrastructure
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">GCP</span>
                                 <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Docker</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">VS Code</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Postman</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Linux</span>
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Kubernetes</span>
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">GitHub Actions</span>
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Prometheus</span>
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Grafana</span>
+                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Sentry</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="py-24 border-t border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="mb-16">
+                        <h2 class="text-accent font-mono text-lg mb-2">> find ./projects -type f</h2>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white">Featured Projects</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Codeaholic -->
+                        <div class="project-card p-8 rounded-lg bg-slate-800/20 border border-slate-800">
+                            <div class="flex justify-between items-start mb-6">
+                                <h4 class="text-2xl font-bold text-white">Codeaholic</h4>
+                                <a href="https://github.com/pravinkanna" class="text-accent hover:text-white transition-colors">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                            <p class="text-slate-400 mb-6">
+                                An online IDE for writing, running, and sharing code. Features a secure code execution engine using Docker containers.
+                            </p>
+                            <div class="flex flex-wrap gap-2 font-mono text-[10px] text-accent uppercase">
+                                <span>React</span> • <span>Node.js</span> • <span>Express</span> • <span>MongoDB</span> • <span>Redis</span> • <span>Docker</span>
+                            </div>
+                        </div>
+
+                        <!-- Horsey -->
+                        <div class="project-card p-8 rounded-lg bg-slate-800/20 border border-slate-800">
+                            <div class="flex justify-between items-start mb-6">
+                                <h4 class="text-2xl font-bold text-white">Horsey</h4>
+                                <a href="https://github.com/pravinkanna" class="text-accent hover:text-white transition-colors">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                            <p class="text-slate-400 mb-6">
+                                A Web3 app built for ETHIndia 2022. Enables reward distribution via proof-of-humanity verification using Worldcoin.
+                            </p>
+                            <div class="flex flex-wrap gap-2 font-mono text-[10px] text-accent uppercase">
+                                <span>React</span> • <span>Node.js</span> • <span>Express</span> • <span>Solidity</span> • <span>Worldcoin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="py-24 bg-slate-900/50 border-t border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="mb-16 text-center">
+                        <h2 class="text-accent font-mono text-lg mb-2">Education</h2>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white">Academic Foundation</h3>
+                    </div>
+                    <div class="max-w-3xl mx-auto">
+                        <div class="p-8 rounded-lg bg-slate-800/20 border border-slate-800">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                                <div>
+                                    <h4 class="text-xl font-bold text-white">B.Sc. Computer Science</h4>
+                                    <p class="text-accent font-mono">Bishop Heber College</p>
+                                </div>
+                                <div class="text-slate-500 font-mono text-sm">
+                                    JUN 2021
+                                </div>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Coursework: Data Structures and Algorithms, Object Oriented System Design, Operating Systems, Database Design, Software Engineering, and Computer Networking.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
+
+        <!-- Footer -->
+        <footer class="py-12 border-t border-slate-800 bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-accent font-mono font-bold text-xl tracking-tighter">
+                    pkanna<span class="text-slate-500">.dev</span>
+                </div>
+                <div class="flex gap-8">
+                    <a href="https://github.com/pravinkanna" class="text-slate-400 hover:text-accent transition-colors">GitHub</a>
+                    <a href="https://linkedin.com/in/pravinkanna" class="text-slate-400 hover:text-accent transition-colors">LinkedIn</a>
+                    <a href="mailto:pravinkannap@gmail.com" class="text-slate-400 hover:text-accent transition-colors">Email</a>
+                </div>
+                <div class="text-slate-500 text-sm font-mono">
+                    &copy; 2026 Pravinkanna Parthiban
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script>
@@ -321,7 +377,6 @@
 
         function toggleMenu() {
             isMenuOpen = !isMenuOpen;
-            
             if (isMenuOpen) {
                 mobileMenu.classList.remove('hidden');
                 iconClosed.classList.add('hidden');
@@ -338,8 +393,6 @@
         }
 
         mobileMenuButton.addEventListener('click', toggleMenu);
-
-        // Close menu when clicking a link
         const navLinks = mobileMenu.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
