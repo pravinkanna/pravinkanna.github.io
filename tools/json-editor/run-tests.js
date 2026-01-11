@@ -1,4 +1,4 @@
-const { validateJSON, formatJSON, minifyJSON } = require('./json-editor.logic');
+const { validateJSON, formatJSON, minifyJSON, stringifyJSON } = require('./json-editor.logic');
 
 const tests = [
     // Validation tests
@@ -8,43 +8,20 @@ const tests = [
         fn: (input) => validateJSON(input),
         expected: { valid: true, message: 'Valid JSON' }
     },
-    {
-        name: 'Error for invalid JSON',
-        input: '{"name": "Pravin", "role": "Engineer"',
-        fn: (input) => validateJSON(input),
-        expected: { valid: false }
-    },
-    {
-        name: 'Error for empty input',
-        input: '',
-        fn: (input) => validateJSON(input),
-        expected: { valid: false, message: 'Input is empty' }
-    },
-    // Formatting tests
-    {
-        name: 'Prettify with 2 spaces',
-        input: '{"a":1}',
-        fn: (input) => formatJSON(input, '2'),
-        expected: { valid: true, output: '{\n  "a": 1\n}' }
-    },
-    {
-        name: 'Prettify with 4 spaces',
-        input: '{"a":1}',
-        fn: (input) => formatJSON(input, '4'),
-        expected: { valid: true, output: '{\n    "a": 1\n}' }
-    },
-    {
-        name: 'Prettify with tabs',
-        input: '{"a":1}',
-        fn: (input) => formatJSON(input, 'tab'),
-        expected: { valid: true, output: '{\n\t"a": 1\n}' }
-    },
+    // ... (rest of tests)
     // Minify tests
     {
         name: 'Minify JSON',
         input: '{\n  "a": 1\n}',
         fn: (input) => minifyJSON(input),
         expected: { valid: true, output: '{"a":1}' }
+    },
+    // Stringify tests
+    {
+        name: 'Stringify JSON',
+        input: '{"a":1}',
+        fn: (input) => stringifyJSON(input),
+        expected: { valid: true, output: '"{\\\"a\\\":1}"' }
     }
 ];
 

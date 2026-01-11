@@ -59,6 +59,25 @@ function minifyJSON(input) {
     }
 }
 
+/**
+ * Stringifies a JSON string (escapes it).
+ * @param {string} input - The JSON string to stringify.
+ * @returns {Object} - An object with 'valid' (boolean), 'output' (string), and optional 'message'.
+ */
+function stringifyJSON(input) {
+    if (!input || input.trim() === '') {
+        return { valid: false, message: 'Input is empty' };
+    }
+
+    try {
+        JSON.parse(input); // Validate first
+        const output = JSON.stringify(input);
+        return { valid: true, output };
+    } catch (e) {
+        return { valid: false, message: e.message };
+    }
+}
+
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { validateJSON, formatJSON, minifyJSON };
+    module.exports = { validateJSON, formatJSON, minifyJSON, stringifyJSON };
 }

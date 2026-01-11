@@ -235,6 +235,18 @@
                 } catch (e) {
                     return { valid: false, message: e.message };
                 }
+            },
+            stringifyJSON(input) {
+                if (!input || input.trim() === '') {
+                    return { valid: false, message: 'Input is empty' };
+                }
+                try {
+                    JSON.parse(input);
+                    const output = JSON.stringify(input);
+                    return { valid: true, output };
+                } catch (e) {
+                    return { valid: false, message: e.message };
+                }
             }
         };
 
@@ -321,6 +333,23 @@
             if (result.valid) {
                 jsonOutput.value = result.output;
                 updateStatus('JSON minified successfully', 'success');
+                jsonInput.classList.remove('border-red-900/50');
+                jsonInput.classList.add('border-green-900/50');
+            } else {
+                updateStatus(result.message, 'error');
+                jsonInput.classList.remove('border-green-900/50');
+                jsonInput.classList.add('border-red-900/50');
+            }
+        });
+
+        // Event: Stringify
+        btnStringify.addEventListener('click', () => {
+            const input = jsonInput.value;
+            const result = Logic.stringifyJSON(input);
+            
+            if (result.valid) {
+                jsonOutput.value = result.output;
+                updateStatus('JSON stringified successfully', 'success');
                 jsonInput.classList.remove('border-red-900/50');
                 jsonInput.classList.add('border-green-900/50');
             } else {

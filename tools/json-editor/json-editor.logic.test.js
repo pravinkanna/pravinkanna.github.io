@@ -74,3 +74,22 @@ describe('JSON Editor Logic - Minifying', () => {
         expect(result.message).toBeDefined();
     });
 });
+
+describe('JSON Editor Logic - Stringifying', () => {
+    const input = '{"a": 1, "b": "hello"}';
+
+    test('should stringify JSON (escaped)', () => {
+        const { stringifyJSON } = require('./json-editor.logic');
+        const result = stringifyJSON(input);
+        expect(result.valid).toBe(true);
+        expect(result.output).toBe(JSON.stringify(input));
+    });
+
+    test('should return error for invalid JSON when stringifying', () => {
+        const { stringifyJSON } = require('./json-editor.logic');
+        const invalidInput = '{a:1}';
+        const result = stringifyJSON(invalidInput);
+        expect(result.valid).toBe(false);
+        expect(result.message).toBeDefined();
+    });
+});
