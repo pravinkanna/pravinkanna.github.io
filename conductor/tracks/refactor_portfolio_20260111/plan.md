@@ -1,0 +1,37 @@
+# Plan: Refactor Portfolio to Tech-Centric & Modern Design
+
+## Phase 1: Setup and Foundation
+- [x] Task: Initialize Tailwind CSS ab472a8
+    - [ ] Sub-task: Set up Tailwind CSS (via CDN for simplicity or minimal CLI if build is preferred).
+    - [ ] Sub-task: Create a minimal `tailwind.config.js` to define the custom color palette (dark theme) and font family (monospace).
+    - [ ] Sub-task: Create a new `index.html` structure to replace the old one (keep the old one as backup temporarily).
+- [ ] Task: Implement Global Styles & Typography
+    - [ ] Sub-task: Apply base styles (dark background, text colors) to the `<body>`.
+    - [ ] Sub-task: Import and configure Google Fonts (e.g., Fira Code/Roboto Mono).
+- [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
+
+## Phase 2: Core Layout and Hero Section
+- [ ] Task: Build Navigation Bar
+    - [ ] Sub-task: Create a responsive navbar with links (Home, About, Skills, Projects, Blog).
+    - [ ] Sub-task: Implement mobile menu toggle using Vanilla JS (replace logic from `js/main.js`).
+- [ ] Task: Build Hero Section
+    - [ ] Sub-task: Create the introductory hero section with name, title, and a brief "console.log" style intro.
+    - [ ] Sub-task: Ensure responsive scaling for mobile devices.
+- [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
+
+## Phase 3: Content Sections (Timeline & Skills)
+- [ ] Task: Implement Skills Matrix
+    - [ ] Sub-task: Create a grid layout for skills.
+    - [ ] Sub-task: Style skill items as "tags" or "chips" with terminal-like aesthetics.
+- [ ] Task: Implement Professional Timeline
+    - [ ] Sub-task: Build a vertical timeline component using Tailwind flex/grid utilities.
+    - [ ] Sub-task: Migrate content from the old `index.html` to the new structure.
+- [ ] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md)
+
+## Phase 4: Footer and Cleanup
+- [ ] Task: Build Footer
+    - [ ] Sub-task: Add social media links (GitHub, LinkedIn) and copyright info.
+- [ ] Task: Final Review and Cleanup
+    - [ ] Sub-task: Remove old SCSS files and `node-sass` dependency from `package.json`.
+    - [ ] Sub-task: Delete old `index.html` (backup first if needed) and rename new file to `index.html`.
+- [ ] Task: Conductor - User Manual Verification 'Phase 4' (Protocol in workflow.md)
