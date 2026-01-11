@@ -14,7 +14,7 @@
 - [x] Task: Build Navigation Bar e8cea18
     - [ ] Sub-task: Create a responsive navbar with links (Home, About, Skills, Projects, Blog).
     - [ ] Sub-task: Implement mobile menu toggle using Vanilla JS (replace logic from `js/main.js`).
-- [ ] Task: Build Hero Section
+- [x] Task: Build Hero Section b259f06
     - [ ] Sub-task: Create the introductory hero section with name, title, and a brief "console.log" style intro.
     - [ ] Sub-task: Ensure responsive scaling for mobile devices.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
