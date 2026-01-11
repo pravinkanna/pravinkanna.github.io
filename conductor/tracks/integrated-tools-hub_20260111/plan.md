@@ -12,7 +12,7 @@ This plan outlines the steps to integrate the Wealth Journey tool into the portf
 - [x] Task: Update the mobile navigation menu (f6b7012) in `index.html` to include a "Tools" link.
 - [x] Task: Conductor - User Manual Verification 'Navigation and Layout' (manual) (Protocol in workflow.md)
 
-## Phase 3: Tools Hub UI Implementation
+## Phase 3: Tools Hub UI Implementation [checkpoint: 1ffd9a5]
 - [x] Task: Implement the UI for the Tools Directory (18cecfa) in `tools/index.html` using Tailwind CSS, matching the main site's style.
 - [x] Task: Create a card for "Wealth Journey" (18cecfa) in the Tools Directory with a name, description, and launch button.
 - [x] Task: Conductor - User Manual Verification 'Tools Hub Implementation' (manual) (Protocol in workflow.md)
