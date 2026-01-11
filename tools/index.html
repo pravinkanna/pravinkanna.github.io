@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools | Pravinkanna Parthiban</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V84HCNNHT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8V84HCNNHT');
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration for Tailwind CDN -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            200: '#e2e8f0',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                        },
+                        accent: '#06b6d4',
+                    },
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        mono: ['"Fira Code"', '"Roboto Mono"', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .mobile-menu-open {
+            overflow: hidden;
+        }
+
+        .project-card {
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: rgba(6, 182, 212, 0.4);
+            background-color: rgba(30, 41, 59, 0.5);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-slate-200 font-sans antialiased">
+    <div id="app" class="min-h-screen flex flex-col">
+        <!-- Navigation -->
+        <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="/" class="text-accent font-mono font-bold text-xl tracking-tighter">
+                            pravin<span class="text-slate-500">.dev</span>
+                        </a>
+                    </div>
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-8 font-mono text-sm">
+                            <a href="/" class="hover:text-accent px-3 py-2 transition-colors">Home</a>
+                            <a href="/#about" class="hover:text-accent px-3 py-2 transition-colors">Experience</a>
+                            <a href="/#skills" class="hover:text-accent px-3 py-2 transition-colors">Skills</a>
+                            <a href="/#projects" class="hover:text-accent px-3 py-2 transition-colors">Projects</a>
+                            <a href="/tools" class="text-accent px-3 py-2 transition-colors">Tools</a>
+                        </div>
+                    </div>
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" type="button"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none transition-colors"
+                            aria-controls="mobile-menu" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg id="menu-icon-closed" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                            <svg id="menu-icon-opened" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-mono text-center">
+                    <a href="/" class="block px-3 py-4 text-base hover:text-accent transition-colors">Home</a>
+                    <a href="/#about"
+                        class="block px-3 py-4 text-base hover:text-accent transition-colors">Experience</a>
+                    <a href="/#skills" class="block px-3 py-4 text-base hover:text-accent transition-colors">Skills</a>
+                    <a href="/#projects"
+                        class="block px-3 py-4 text-base hover:text-accent transition-colors">Projects</a>
+                    <a href="/tools" class="block px-3 py-4 text-base text-accent transition-colors">Tools</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-grow py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-16">
+                    <h2 class="text-accent font-mono text-lg mb-2">> ls /tools</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-white">Developer Tools</h3>
+                    <p class="text-slate-400 mt-4 max-w-2xl">
+                        A collection of utilities and calculators designed to help with financial planning and development workflows.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Wealth Journey Tool Card -->
+                    <div class="project-card p-8 rounded-lg bg-slate-800/20 border border-slate-800 flex flex-col h-full">
+                        <div class="mb-6">
+                            <h4 class="text-2xl font-bold text-white">Wealth Journey</h4>
+                        </div>
+                        <p class="text-slate-400 mb-8 flex-grow">
+                            Simulate and visualize your wealth accumulation journey over time using SIPs, expected returns (CAGR), and annual step-up contributions.
+                        </p>
+                        <div class="mt-auto">
+                            <a href="/tools/wealth-journey/"
+                                class="inline-block bg-accent/10 border border-accent/30 text-accent px-6 py-3 rounded hover:bg-accent/20 transition-all font-mono text-sm">
+                                ./launch-tool.sh
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-12 border-t border-slate-800 bg-slate-900">
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-accent font-mono font-bold text-xl tracking-tighter">
+                    pravin<span class="text-slate-500">.dev</span>
+                </div>
+                <div class="flex gap-8">
+                    <a href="https://github.com/pravinkanna"
+                        class="text-slate-400 hover:text-accent transition-colors">GitHub</a>
+                    <a href="https://linkedin.com/in/pravin-kanna"
+                        class="text-slate-400 hover:text-accent transition-colors">LinkedIn</a>
+                    <a href="mailto:pravinkannap@gmail.com"
+                        class="text-slate-400 hover:text-accent transition-colors">Email</a>
+                </div>
+                <div class="text-slate-500 text-sm font-mono">
+                    &copy; 2026 Pravinkanna Parthiban
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle Logic
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconClosed = document.getElementById('menu-icon-closed');
+        const iconOpened = document.getElementById('menu-icon-opened');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                iconClosed.classList.add('hidden');
+                iconOpened.classList.remove('hidden');
+                document.body.classList.add('mobile-menu-open');
+                mobileMenuButton.setAttribute('aria-expanded', 'true');
+            } else {
+                mobileMenu.classList.add('hidden');
+                iconClosed.classList.remove('hidden');
+                iconOpened.classList.add('hidden');
+                document.body.classList.remove('mobile-menu-open');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMenu);
+        const navLinks = mobileMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) toggleMenu();
+            });
+        });
+    </script>
+</body>
+
+</html>
