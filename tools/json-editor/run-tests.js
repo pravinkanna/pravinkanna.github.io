@@ -1,4 +1,4 @@
-const { validateJSON, formatJSON } = require('./json-editor.logic');
+const { validateJSON, formatJSON, minifyJSON } = require('./json-editor.logic');
 
 const tests = [
     // Validation tests
@@ -38,6 +38,13 @@ const tests = [
         input: '{"a":1}',
         fn: (input) => formatJSON(input, 'tab'),
         expected: { valid: true, output: '{\n\t"a": 1\n}' }
+    },
+    // Minify tests
+    {
+        name: 'Minify JSON',
+        input: '{\n  "a": 1\n}',
+        fn: (input) => minifyJSON(input),
+        expected: { valid: true, output: '{"a":1}' }
     }
 ];
 

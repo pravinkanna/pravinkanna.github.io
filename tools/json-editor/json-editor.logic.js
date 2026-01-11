@@ -40,6 +40,25 @@ function formatJSON(input, indent) {
     }
 }
 
+/**
+ * Minifies a JSON string.
+ * @param {string} input - The JSON string to minify.
+ * @returns {Object} - An object with 'valid' (boolean), 'output' (string), and optional 'message'.
+ */
+function minifyJSON(input) {
+    if (!input || input.trim() === '') {
+        return { valid: false, message: 'Input is empty' };
+    }
+
+    try {
+        const parsed = JSON.parse(input);
+        const output = JSON.stringify(parsed);
+        return { valid: true, output };
+    } catch (e) {
+        return { valid: false, message: e.message };
+    }
+}
+
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { validateJSON, formatJSON };
+    module.exports = { validateJSON, formatJSON, minifyJSON };
 }
