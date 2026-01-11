@@ -447,8 +447,8 @@ function updateCharts(labels, invested, value, inflationAdjusted, profit, sipDat
                     }
                 }
             }
-        });
-    }
+        }
+    });
 
     if (fundStates) {
         const corpusCtx = document.getElementById('wealth-allocation-chart').getContext('2d');
@@ -500,4 +500,4 @@ function toggleSidebar() {
     }, 350);
 }
 
-init();
+document.addEventListener("DOMContentLoaded", init);
