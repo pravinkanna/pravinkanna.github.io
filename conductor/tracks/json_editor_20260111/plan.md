@@ -14,6 +14,7 @@ This plan outlines the steps to create a split-view JSON utility at `/tools/json
 - [x] Task: Implement "Prettify" logic with support for dynamic indentation (2 spaces, 4 spaces, tabs). 45da94b
 - [x] Task: Implement "Minify" logic (removing whitespace). c30575d
 - [x] Task: Implement "Stringify" logic (outputting as an escaped string). aa9b3a6
+- [x] Task: Implement "Unstringify" logic (parsing an escaped string back to JSON). 1129719
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Core Logic - Validation and Formatting' (Protocol in workflow.md) 41269b8
 
 ## Phase 3: Utilities and Polish [checkpoint: feec270]
