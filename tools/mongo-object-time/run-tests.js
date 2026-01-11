@@ -52,6 +52,22 @@ const tests = [
         name: 'extractTimestamp - Invalid ObjectID',
         fn: () => MongoIDConverter.extractTimestamp('invalid'),
         expected: null
+    },
+    // generateObjectID tests
+    {
+        name: 'generateObjectID - Valid date',
+        fn: () => MongoIDConverter.generateObjectID(new Date('2012-10-17T21:13:27.000Z')),
+        expected: '507f1f770000000000000000'
+    },
+    {
+        name: 'generateObjectID - Recent date',
+        fn: () => MongoIDConverter.generateObjectID(new Date('2024-01-11T06:28:16.000Z')),
+        expected: '659f8a800000000000000000'
+    },
+    {
+        name: 'generateObjectID - Invalid input',
+        fn: () => MongoIDConverter.generateObjectID('not a date'),
+        expected: ''
     }
 ];
 

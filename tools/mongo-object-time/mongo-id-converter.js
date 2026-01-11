@@ -15,8 +15,10 @@ const MongoIDConverter = {
     },
 
     generateObjectID(date) {
-        // TODO: Implementation
-        return '';
+        if (!(date instanceof Date) || isNaN(date.getTime())) return '';
+        const timestamp = Math.floor(date.getTime() / 1000);
+        const hexTimestamp = timestamp.toString(16).padStart(8, '0');
+        return hexTimestamp + '0000000000000000';
     },
 
     getRelativeTime(date) {
