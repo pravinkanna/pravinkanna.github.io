@@ -379,6 +379,22 @@
             });
         });
 
+        // Event: Download JSON
+        btnDownload.addEventListener('click', () => {
+            const content = jsonOutput.value;
+            if (!content) return;
+            
+            const blob = new Blob([content], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'data.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
         // Mobile Menu Toggle Logic
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
