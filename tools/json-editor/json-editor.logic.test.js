@@ -22,3 +22,36 @@ describe('JSON Editor Logic - Validation', () => {
         expect(result.message).toBe('Input is empty');
     });
 });
+
+describe('JSON Editor Logic - Formatting', () => {
+    const input = '{"a":1,"b":[2,3]}';
+
+    test('should prettify with 2 spaces', () => {
+        const { validateJSON, formatJSON } = require('./json-editor.logic');
+        const result = formatJSON(input, '2');
+        expect(result.valid).toBe(true);
+        expect(result.output).toBe(JSON.stringify(JSON.parse(input), null, 2));
+    });
+
+    test('should prettify with 4 spaces', () => {
+        const { formatJSON } = require('./json-editor.logic');
+        const result = formatJSON(input, '4');
+        expect(result.valid).toBe(true);
+        expect(result.output).toBe(JSON.stringify(JSON.parse(input), null, 4));
+    });
+
+    test('should prettify with tabs', () => {
+        const { formatJSON } = require('./json-editor.logic');
+        const result = formatJSON(input, 'tab');
+        expect(result.valid).toBe(true);
+        expect(result.output).toBe(JSON.stringify(JSON.parse(input), null, '\t'));
+    });
+
+    test('should return error for invalid JSON when formatting', () => {
+        const { formatJSON } = require('./json-editor.logic');
+        const invalidInput = '{a:1}';
+        const result = formatJSON(invalidInput, '2');
+        expect(result.valid).toBe(false);
+        expect(result.message).toBeDefined();
+    });
+});
