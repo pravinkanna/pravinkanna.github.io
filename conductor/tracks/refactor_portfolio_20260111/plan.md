@@ -1,6 +1,6 @@
 # Plan: Refactor Portfolio to Tech-Centric & Modern Design
 
-## Phase 1: Setup and Foundation
+## Phase 1: Setup and Foundation [checkpoint: b2648ce]
 - [x] Task: Initialize Tailwind CSS ab472a8
     - [ ] Sub-task: Set up Tailwind CSS (via CDN for simplicity or minimal CLI if build is preferred).
     - [ ] Sub-task: Create a minimal `tailwind.config.js` to define the custom color palette (dark theme) and font family (monospace).
