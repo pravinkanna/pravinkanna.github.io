@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "my personal portfolio",
   "main": "app.js",
-  "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Pravinkanna/pravinkanna.github.io.git"
@@ -23,8 +21,5 @@
   "bugs": {
     "url": "https://github.com/Pravinkanna/pravinkanna.github.io/issues"
   },
-  "homepage": "https://github.com/Pravinkanna/pravinkanna.github.io#readme",
-  "dependencies": {
-    "node-sass": "^4.14.1"
-  }
+  "homepage": "https://github.com/Pravinkanna/pravinkanna.github.io#readme"
 }

@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-## [ ] Track: Refactor portfolio to Tech-Centric & Modern design using HTML, CSS, JS, and Tailwind CSS.
+## [~] Track: Refactor portfolio to Tech-Centric & Modern design using HTML, CSS, JS, and Tailwind CSS.
 *Link: [./conductor/tracks/refactor_portfolio_20260111/](./conductor/tracks/refactor_portfolio_20260111/)*
