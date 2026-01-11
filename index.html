@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pravinkanna Parthiban | Senior Software Engineer</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V84HCNNHT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8V84HCNNHT');
+    </script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configuration for Tailwind CDN -->
@@ -33,14 +45,18 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <style>
         .mobile-menu-open {
             overflow: hidden;
         }
+
         .code-container {
             position: relative;
         }
+
         .code-container::before {
             content: "";
             position: absolute;
@@ -51,14 +67,17 @@
             background: radial-gradient(circle at center, rgba(6, 182, 212, 0.05) 0%, transparent 70%);
             z-index: -1;
         }
+
         .skill-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .skill-card:hover {
             transform: translateY(-4px);
             border-color: rgba(6, 182, 212, 0.4);
             background-color: rgba(30, 41, 59, 0.8);
         }
+
         .timeline-item::before {
             content: "";
             position: absolute;
@@ -71,15 +90,18 @@
             border: 2px solid #06b6d4;
             z-index: 10;
         }
+
         .project-card {
             transition: all 0.3s ease;
         }
+
         .project-card:hover {
             border-color: rgba(6, 182, 212, 0.4);
             background-color: rgba(30, 41, 59, 0.5);
         }
     </style>
 </head>
+
 <body class="bg-slate-900 text-slate-200 font-sans antialiased">
     <div id="app" class="min-h-screen flex flex-col">
         <!-- Navigation -->
@@ -102,13 +124,19 @@
                     </div>
                     <!-- Mobile Menu Button -->
                     <div class="md:hidden">
-                        <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+                        <button id="mobile-menu-button" type="button"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none transition-colors"
+                            aria-controls="mobile-menu" aria-expanded="false">
                             <span class="sr-only">Open main menu</span>
-                            <svg id="menu-icon-closed" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            <svg id="menu-icon-closed" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
-                            <svg id="menu-icon-opened" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            <svg id="menu-icon-opened" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
                     </div>
@@ -119,9 +147,11 @@
             <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-mono text-center">
                     <a href="#home" class="block px-3 py-4 text-base hover:text-accent transition-colors">Home</a>
-                    <a href="#about" class="block px-3 py-4 text-base hover:text-accent transition-colors">Experience</a>
+                    <a href="#about"
+                        class="block px-3 py-4 text-base hover:text-accent transition-colors">Experience</a>
                     <a href="#skills" class="block px-3 py-4 text-base hover:text-accent transition-colors">Skills</a>
-                    <a href="#projects" class="block px-3 py-4 text-base hover:text-accent transition-colors">Projects</a>
+                    <a href="#projects"
+                        class="block px-3 py-4 text-base hover:text-accent transition-colors">Projects</a>
                 </div>
             </div>
         </nav>
@@ -138,12 +168,21 @@
                             <span class="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/40"></span>
                             <span class="ml-2">~/portfolio/home.js</span>
                         </div>
-                        
+
                         <div class="space-y-2">
-                            <p class="text-accent"><span class="text-slate-500">1</span> <span class="text-purple-400">const</span> developer = {</p>
-                            <p class="pl-4 md:pl-8"><span class="text-slate-500">2</span> <span class="text-slate-200">name:</span> <span class="text-green-400">'Pravinkanna Parthiban'</span>,</p>
-                            <p class="pl-4 md:pl-8"><span class="text-slate-500">3</span> <span class="text-slate-200">title:</span> <span class="text-green-400">'Senior Software Engineer'</span>,</p>
-                            <p class="pl-4 md:pl-8"><span class="text-slate-500">4</span> <span class="text-slate-200">specialization:</span> [<span class="text-green-400">'Golang'</span>, <span class="text-green-400">'Node.js'</span>, <span class="text-green-400">'Kubernetes'</span>]</p>
+                            <p class="text-accent"><span class="text-slate-500">1</span> <span
+                                    class="text-purple-400">const</span> developer = {</p>
+                            <p class="pl-4 md:pl-8"><span class="text-slate-500">2</span> <span
+                                    class="text-slate-200">name:</span> <span class="text-green-400">'Pravinkanna
+                                    Parthiban'</span>,</p>
+                            <p class="pl-4 md:pl-8"><span class="text-slate-500">3</span> <span
+                                    class="text-slate-200">title:</span> <span class="text-green-400">'Senior Software
+                                    Engineer'</span>,</p>
+                            <p class="pl-4 md:pl-8"><span class="text-slate-500">4</span> <span
+                                    class="text-slate-200">specialization:</span> [<span
+                                    class="text-green-400">'Golang'</span>, <span
+                                    class="text-green-400">'Node.js'</span>, <span
+                                    class="text-green-400">'Kubernetes'</span>]</p>
                             <p class=""><span class="text-slate-500">5</span> };</p>
                         </div>
 
@@ -152,13 +191,16 @@
                                 Hello, I'm <span class="text-accent">Pravin</span>.
                             </h1>
                             <p class="text-xl md:text-2xl text-slate-400 font-sans mb-10 max-w-2xl">
-                                Senior Software Engineer focused on building high-performance, distributed systems and scalable cloud infrastructure.
+                                Senior Software Engineer focused on building high-performance, distributed systems and
+                                scalable cloud infrastructure.
                             </p>
                             <div class="flex flex-wrap gap-4 font-mono text-sm">
-                                <a href="#projects" class="bg-accent/10 border border-accent/30 text-accent px-6 py-3 rounded hover:bg-accent/20 transition-all">
+                                <a href="#projects"
+                                    class="bg-accent/10 border border-accent/30 text-accent px-6 py-3 rounded hover:bg-accent/20 transition-all">
                                     ./view-projects.sh
                                 </a>
-                                <a href="https://github.com/pravinkanna" target="_blank" class="bg-slate-800/50 border border-slate-700 text-slate-300 px-6 py-3 rounded hover:bg-slate-700 transition-all">
+                                <a href="https://github.com/pravinkanna" target="_blank"
+                                    class="bg-slate-800/50 border border-slate-700 text-slate-300 px-6 py-3 rounded hover:bg-slate-700 transition-all">
                                     git checkout github
                                 </a>
                             </div>
@@ -178,42 +220,56 @@
                     <div class="relative pl-8 md:ml-56 border-l border-slate-800 space-y-16 max-w-4xl">
                         <!-- Vumonic -->
                         <div class="timeline-item relative">
-                            <div class="font-mono text-xs text-slate-400 mb-2 md:mb-0 md:absolute md:left-[-230px] md:top-1 md:w-[170px] md:text-right">
+                            <div
+                                class="font-mono text-xs text-slate-400 mb-2 md:mb-0 md:absolute md:left-[-230px] md:top-1 md:w-[170px] md:text-right">
                                 JAN 2021 - PRESENT
                             </div>
                             <h5 class="text-xl font-bold text-white">Senior Software Engineer</h5>
                             <p class="text-accent font-mono text-sm mb-4">Vumonic Datalabs | Bengaluru, India</p>
                             <ul class="text-slate-400 text-sm space-y-3 list-disc pl-4">
-                                <li><strong>Engineering Leadership:</strong> Directed a team of 3, managing frontend and DevOps workflows while defining engineering standards across the organization.</li>
-                                <li><strong>High-Scale Systems:</strong> Architected a real-time email monitoring engine for 3 million users using IMAP IDLE, reducing processing latency from hours to milliseconds.</li>
-                                <li><strong>Cloud Migration:</strong> Executed a zero-downtime migration of 80 TiB storage, 30+ services, and 5 databases from Oracle Cloud to GCP.</li>
-                                <li><strong>Reliability Engineering:</strong> Slashed production error rates by 70% by rewriting legacy Node.js services in Go 1.23, enforcing strict typing and automated monitoring.</li>
-                                <li><strong>DevOps Automation:</strong> Accelerated deployment cycles by 90% through Docker containerization and Kubernetes orchestration for over 30 microservices.</li>
+                                <li><strong>Engineering Leadership:</strong> Directed a team of 3, managing frontend and
+                                    DevOps workflows while defining engineering standards across the organization.</li>
+                                <li><strong>High-Scale Systems:</strong> Architected a real-time email monitoring engine
+                                    for 3 million users using IMAP IDLE, reducing processing latency from hours to
+                                    milliseconds.</li>
+                                <li><strong>Cloud Migration:</strong> Executed a zero-downtime migration of 80 TiB
+                                    storage, 30+ services, and 5 databases from Oracle Cloud to GCP.</li>
+                                <li><strong>Reliability Engineering:</strong> Slashed production error rates by 70% by
+                                    rewriting legacy Node.js services in Go 1.23, enforcing strict typing and automated
+                                    monitoring.</li>
+                                <li><strong>DevOps Automation:</strong> Accelerated deployment cycles by 90% through
+                                    Docker containerization and Kubernetes orchestration for over 30 microservices.</li>
                             </ul>
                         </div>
 
                         <!-- Pretva -->
                         <div class="timeline-item relative">
-                            <div class="font-mono text-xs text-slate-400 mb-2 md:mb-0 md:absolute md:left-[-230px] md:top-1 md:w-[170px] md:text-right">
+                            <div
+                                class="font-mono text-xs text-slate-400 mb-2 md:mb-0 md:absolute md:left-[-230px] md:top-1 md:w-[170px] md:text-right">
                                 OCT 2020 - DEC 2020
                             </div>
                             <h5 class="text-xl font-bold text-white">Fullstack Developer Intern</h5>
                             <p class="text-accent font-mono text-sm mb-4">Pretva | Remote</p>
                             <ul class="text-slate-400 text-sm space-y-3 list-disc pl-4">
-                                <li><strong>Real-Time Communication:</strong> Built a WebSocket-based chat system to facilitate instant messaging between buyers and suppliers.</li>
-                                <li><strong>UI/UX Modernization:</strong> Overhauled the web application interface, aligning with new design prototypes to improve user experience and consistency.</li>
+                                <li><strong>Real-Time Communication:</strong> Built a WebSocket-based chat system to
+                                    facilitate instant messaging between buyers and suppliers.</li>
+                                <li><strong>UI/UX Modernization:</strong> Overhauled the web application interface,
+                                    aligning with new design prototypes to improve user experience and consistency.</li>
                             </ul>
                         </div>
 
                         <!-- T4TEQ -->
                         <div class="timeline-item relative">
-                            <div class="font-mono text-xs text-slate-400 mb-2 md:mb-0 md:absolute md:left-[-230px] md:top-1 md:w-[170px] md:text-right">
+                            <div
+                                class="font-mono text-xs text-slate-400 mb-2 md:mb-0 md:absolute md:left-[-230px] md:top-1 md:w-[170px] md:text-right">
                                 JAN 2020 - AUG 2020
                             </div>
                             <h5 class="text-xl font-bold text-white">Tutor</h5>
-                            <p class="text-accent font-mono text-sm mb-4">T4TEQ Software Solutions | Tamil Nadu, India</p>
+                            <p class="text-accent font-mono text-sm mb-4">T4TEQ Software Solutions | Tamil Nadu, India
+                            </p>
                             <ul class="text-slate-400 text-sm space-y-3 list-disc pl-4">
-                                <li><strong>Mentorship:</strong> Instructed over 50 students in Python, Data Structures, and Algorithms, achieving a 95% course completion rate.</li>
+                                <li><strong>Mentorship:</strong> Instructed over 50 students in Python, Data Structures,
+                                    and Algorithms, achieving a 95% course completion rate.</li>
                             </ul>
                         </div>
                     </div>
@@ -235,13 +291,20 @@
                                 <span class="text-accent">01.</span> Languages & Frameworks
                             </h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Golang</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Node.js</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">TypeScript</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">JavaScript</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Python</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">NestJS</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Express.js</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Golang</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Node.js</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">TypeScript</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">JavaScript</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Python</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">NestJS</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Express.js</span>
                             </div>
                         </div>
 
@@ -251,12 +314,18 @@
                                 <span class="text-accent">02.</span> Database & Messaging
                             </h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">PostgreSQL</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">MongoDB</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Redis</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Elasticsearch</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Kafka</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">RabbitMQ</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">PostgreSQL</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">MongoDB</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Redis</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Elasticsearch</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Kafka</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">RabbitMQ</span>
                             </div>
                         </div>
 
@@ -266,13 +335,21 @@
                                 <span class="text-accent">03.</span> Cloud & Infrastructure
                             </h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">GCP</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Docker</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Kubernetes</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">GitHub Actions</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Prometheus</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Grafana</span>
-                                <span class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Sentry</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">GCP</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Docker</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Kubernetes</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">GitHub
+                                    Actions</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Prometheus</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Grafana</span>
+                                <span
+                                    class="px-3 py-1 bg-slate-900 rounded-full text-xs font-mono border border-slate-700 text-slate-400">Sentry</span>
                             </div>
                         </div>
                     </div>
@@ -292,15 +369,21 @@
                         <div class="project-card p-8 rounded-lg bg-slate-800/20 border border-slate-800">
                             <div class="flex justify-between items-start mb-6">
                                 <h4 class="text-2xl font-bold text-white">Codeaholic</h4>
-                                <a href="https://github.com/pravinkanna" class="text-accent hover:text-white transition-colors">
-                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                <a href="https://github.com/pravinkanna"
+                                    class="text-accent hover:text-white transition-colors">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    </svg>
                                 </a>
                             </div>
                             <p class="text-slate-400 mb-6">
-                                An online IDE for writing, running, and sharing code. Features a secure code execution engine using Docker containers.
+                                An online IDE for writing, running, and sharing code. Features a secure code execution
+                                engine using Docker containers.
                             </p>
                             <div class="flex flex-wrap gap-2 font-mono text-[10px] text-accent uppercase">
-                                <span>React</span> • <span>Node.js</span> • <span>Express</span> • <span>MongoDB</span> • <span>Redis</span> • <span>Docker</span>
+                                <span>React</span> • <span>Node.js</span> • <span>Express</span> • <span>MongoDB</span>
+                                • <span>Redis</span> • <span>Docker</span>
                             </div>
                         </div>
 
@@ -308,15 +391,21 @@
                         <div class="project-card p-8 rounded-lg bg-slate-800/20 border border-slate-800">
                             <div class="flex justify-between items-start mb-6">
                                 <h4 class="text-2xl font-bold text-white">Horsey</h4>
-                                <a href="https://github.com/pravinkanna" class="text-accent hover:text-white transition-colors">
-                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                <a href="https://github.com/pravinkanna"
+                                    class="text-accent hover:text-white transition-colors">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    </svg>
                                 </a>
                             </div>
                             <p class="text-slate-400 mb-6">
-                                A Web3 app built for ETHIndia 2022. Enables reward distribution via proof-of-humanity verification using Worldcoin.
+                                A Web3 app built for ETHIndia 2022. Enables reward distribution via proof-of-humanity
+                                verification using Worldcoin.
                             </p>
                             <div class="flex flex-wrap gap-2 font-mono text-[10px] text-accent uppercase">
-                                <span>React</span> • <span>Node.js</span> • <span>Express</span> • <span>Solidity</span> • <span>Worldcoin</span>
+                                <span>React</span> • <span>Node.js</span> • <span>Express</span> • <span>Solidity</span>
+                                • <span>Worldcoin</span>
                             </div>
                         </div>
                     </div>
@@ -337,12 +426,14 @@
                                     <h4 class="text-xl font-bold text-white">B.Sc. Computer Science</h4>
                                     <p class="text-accent font-mono">Bishop Heber College</p>
                                 </div>
-                                <div class="font-mono text-xs text-slate-400 mb-2 md:mb-0 md:absolute md:left-[-230px] md:top-1 md:w-[170px] md:text-right">
+                                <div
+                                    class="font-mono text-xs text-slate-400 mb-2 md:mb-0 md:absolute md:left-[-230px] md:top-1 md:w-[170px] md:text-right">
                                     JUN 2021
                                 </div>
                             </div>
                             <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                                Coursework: Data Structures and Algorithms, Object Oriented System Design, Operating Systems, Database Design, Software Engineering, and Computer Networking.
+                                Coursework: Data Structures and Algorithms, Object Oriented System Design, Operating
+                                Systems, Database Design, Software Engineering, and Computer Networking.
                             </p>
                         </div>
                     </div>
@@ -352,14 +443,18 @@
 
         <!-- Footer -->
         <footer class="py-12 border-t border-slate-800 bg-slate-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
                 <div class="text-accent font-mono font-bold text-xl tracking-tighter">
                     pravin<span class="text-slate-500">.dev</span>
                 </div>
                 <div class="flex gap-8">
-                    <a href="https://github.com/pravinkanna" class="text-slate-400 hover:text-accent transition-colors">GitHub</a>
-                    <a href="https://linkedin.com/in/pravinkanna" class="text-slate-400 hover:text-accent transition-colors">LinkedIn</a>
-                    <a href="mailto:pravinkannap@gmail.com" class="text-slate-400 hover:text-accent transition-colors">Email</a>
+                    <a href="https://github.com/pravinkanna"
+                        class="text-slate-400 hover:text-accent transition-colors">GitHub</a>
+                    <a href="https://linkedin.com/in/pravinkanna"
+                        class="text-slate-400 hover:text-accent transition-colors">LinkedIn</a>
+                    <a href="mailto:pravinkannap@gmail.com"
+                        class="text-slate-400 hover:text-accent transition-colors">Email</a>
                 </div>
                 <div class="text-slate-500 text-sm font-mono">
                     &copy; 2026 Pravinkanna Parthiban
@@ -402,4 +497,5 @@
         });
     </script>
 </body>
+
 </html>
