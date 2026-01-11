@@ -1,6 +1,37 @@
 const MongoIDConverter = require('./mongo-id-converter');
 
-const tests = [];
+const tests = [
+    {
+        name: 'isValidObjectID - Valid 24-char hex',
+        fn: () => MongoIDConverter.isValidObjectID('507f1f77bcf86cd799439011'),
+        expected: true
+    },
+    {
+        name: 'isValidObjectID - Invalid characters',
+        fn: () => MongoIDConverter.isValidObjectID('507f1f77bcf86cd79943901g'),
+        expected: false
+    },
+    {
+        name: 'isValidObjectID - Too short',
+        fn: () => MongoIDConverter.isValidObjectID('507f1f77bcf86cd79943901'),
+        expected: false
+    },
+    {
+        name: 'isValidObjectID - Too long',
+        fn: () => MongoIDConverter.isValidObjectID('507f1f77bcf86cd7994390111'),
+        expected: false
+    },
+    {
+        name: 'isValidObjectID - Empty string',
+        fn: () => MongoIDConverter.isValidObjectID(''),
+        expected: false
+    },
+    {
+        name: 'isValidObjectID - Non-string',
+        fn: () => MongoIDConverter.isValidObjectID(null),
+        expected: false
+    }
+];
 
 let failedCount = 0;
 

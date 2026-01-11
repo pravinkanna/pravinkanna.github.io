@@ -4,8 +4,8 @@
 
 const MongoIDConverter = {
     isValidObjectID(oid) {
-        // TODO: Implementation
-        return false;
+        if (typeof oid !== 'string') return false;
+        return /^[0-9a-fA-F]{24}$/.test(oid);
     },
 
     extractTimestamp(oid) {
