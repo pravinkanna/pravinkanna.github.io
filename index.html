@@ -1,53 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pravinkanna Portfolio</title>
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="/dist/css/main.css" />
-  </head>
-
-  <body id="bg-img">
-    <header>
-      <!-- Hamburger Icon -->
-      <div class="menu-btn">
-        <div class="btn-line"></div>
-        <div class="btn-line"></div>
-        <div class="btn-line"></div>
-      </div>
-      <!-- #/Hamburger Icon -->
-      <!-- Navigation Menu -->
-      <div class="menu">
-        <div class="menu-branding">
-          <div class="portrait"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pravin Kanna | Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration for Tailwind CDN -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            900: '#0f172a',
+                            200: '#e2e8f0',
+                        },
+                        accent: '#06b6d4',
+                    },
+                    fontFamily: {
+                        mono: ['"Fira Code"', '"Roboto Mono"', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Fira Code', 'Roboto Mono', monospace;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-200">
+    <div id="app">
+        <!-- Temporary Content for Verification -->
+        <div class="flex h-screen items-center justify-center">
+            <h1 class="text-3xl font-bold text-accent">
+                System Initialized.
+            </h1>
         </div>
-        <ul class="menu-nav">
-          <li class="nav-item current"><a class="nav-link" href="/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="/about">About me</a></li>
-          <li class="nav-item"><a class="nav-link" href="/">My projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="/">Education &amp; Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact">Contact me</a></li>
-        </ul>
-      </div>
-      <!-- #/Navigation Menu -->
-    </header>
-
-    <!-- Main content -->
-    <main id="home">
-      <h1 class="lg-heading">Pravin <span class="text-secondary">Kanna</span></h1>
-      <h2 class="sm-heading">CS&nbsp;Undergrad, Software&nbsp;Developer, Tech&nbsp;Enthusiast</h2>
-      <div class="icons">
-        <a href="https://linkedin.com/in/pravinkanna"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/pravinkanna"><i class="fab fa-github"></i></a>
-        <a href="mailto:mp.pravinkanna@gmail.com"><i class="fas fa-envelope"></i></a>
-      </div>
-    </main>
-    <!-- #/Main content -->
-
-    <!-- Custom JavaScript -->
-    <script src="js/main.js"></script>
-  </body>
+    </div>
+</body>
 </html>
