@@ -124,6 +124,14 @@
 
                     <!-- Control Panel -->
                     <div class="flex flex-row lg:flex-col justify-center items-center gap-2 lg:px-2">
+                        <div class="w-full lg:w-auto flex flex-col gap-1 mb-2">
+                            <label for="indent-select" class="text-[10px] font-mono text-slate-500 uppercase">Indent</label>
+                            <select id="indent-select" class="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-xs font-mono text-slate-300 focus:outline-none focus:border-accent/50">
+                                <option value="2">2 Spaces</option>
+                                <option value="4">4 Spaces</option>
+                                <option value="tab">Tabs</option>
+                            </select>
+                        </div>
                         <button id="btn-validate" class="w-full lg:w-auto px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Validate JSON">
                             Validate
                         </button>
