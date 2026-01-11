@@ -395,6 +395,15 @@
             URL.revokeObjectURL(url);
         });
 
+        // Event: Clear All
+        btnClear.addEventListener('click', () => {
+            jsonInput.value = '';
+            jsonOutput.value = '';
+            inputStats.textContent = '0 characters';
+            clearStatus();
+            jsonInput.classList.remove('border-green-900/50', 'border-red-900/50');
+        });
+
         // Mobile Menu Toggle Logic
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
