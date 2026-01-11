@@ -18,6 +18,6 @@ This plan outlines the steps to integrate the Wealth Journey tool into the portf
 - [x] Task: Conductor - User Manual Verification 'Tools Hub Implementation' (manual) (Protocol in workflow.md)
 
 ## Phase 4: Final Verification and Cleanup
-- [ ] Task: Verify responsive behavior for the new Tools page and navigation.
-- [ ] Task: Final cross-browser check for the Wealth Journey tool functionality.
-- [ ] Task: Conductor - User Manual Verification 'Final Verification and Cleanup' (Protocol in workflow.md)
+- [x] Task: Verify responsive behavior (manual) for the new Tools page and navigation.
+- [x] Task: Final cross-browser check (manual) for the Wealth Journey tool functionality.
+- [x] Task: Conductor - User Manual Verification 'Final Verification and Cleanup' (manual) (Protocol in workflow.md)
