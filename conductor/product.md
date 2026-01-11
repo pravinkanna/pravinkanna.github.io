@@ -14,4 +14,4 @@ To build a comprehensive personal portfolio that effectively showcases professio
 - **Professional Timeline:** A chronological display of career history and milestones.
 - **Skills Matrix:** A categorized presentation of technical skills and technologies.
 - **Blog Section:** A dedicated area at `/blogs` for sharing technical insights and articles.
-- **Developer Tools:** A suite of simple browser-based tools (e.g., GiB to MiB calculator) hosted under `/tools/tool_name`.
+- **Developer Tools:** A centralized hub at `/tools/` hosting a suite of browser-based utilities, starting with the Wealth Journey financial visualizer.
