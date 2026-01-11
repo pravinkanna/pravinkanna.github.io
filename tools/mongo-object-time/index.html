@@ -210,8 +210,95 @@
     <!-- Logic Script -->
     <script src="./mongo-id-converter.js"></script>
     <script>
-        // UI Interaction Logic will go here
-        
+        // DOM Elements - ObjectID to Timestamp
+        const oidInput = document.getElementById('oid-input');
+        const oidOutputContainer = document.getElementById('oid-output-container');
+        const oidError = document.getElementById('oid-error');
+        const localTimeDisplay = document.getElementById('local-time');
+        const isoTimeDisplay = document.getElementById('iso-time');
+        const relativeTimeDisplay = document.getElementById('relative-time');
+        const btnSampleOID = document.getElementById('btn-sample-oid');
+
+        // DOM Elements - Timestamp to ObjectID
+        const dateInput = document.getElementById('date-input');
+        const dateOutputContainer = document.getElementById('date-output-container');
+        const generatedOIDDisplay = document.getElementById('generated-oid');
+        const btnCurrentTime = document.getElementById('btn-current-time');
+
+        // ObjectID to Timestamp Logic
+        function handleOIDChange() {
+            const oid = oidInput.value.trim();
+            if (!oid) {
+                oidOutputContainer.classList.add('hidden');
+                oidError.classList.add('hidden');
+                oidInput.classList.remove('border-accent/50', 'border-red-900/50');
+                return;
+            }
+
+            if (MongoIDConverter.isValidObjectID(oid)) {
+                const date = MongoIDConverter.extractTimestamp(oid);
+                localTimeDisplay.textContent = date.toString();
+                isoTimeDisplay.textContent = date.toISOString();
+                relativeTimeDisplay.textContent = MongoIDConverter.getRelativeTime(date);
+                
+                oidOutputContainer.classList.remove('hidden');
+                oidError.classList.add('hidden');
+                oidInput.classList.add('border-accent/50');
+                oidInput.classList.remove('border-red-900/50');
+            } else {
+                oidOutputContainer.classList.add('hidden');
+                oidError.classList.remove('hidden');
+                oidInput.classList.add('border-red-900/50');
+                oidInput.classList.remove('border-accent/50');
+            }
+        }
+
+        oidInput.addEventListener('input', handleOIDChange);
+        btnSampleOID.addEventListener('click', () => {
+            oidInput.value = '507f1f77bcf86cd799439011';
+            handleOIDChange();
+        });
+
+        // Timestamp to ObjectID Logic
+        function handleDateChange() {
+            const dateStr = dateInput.value;
+            if (!dateStr) {
+                dateOutputContainer.classList.add('hidden');
+                return;
+            }
+
+            const date = new Date(dateStr);
+            const oid = MongoIDConverter.generateObjectID(date);
+            generatedOIDDisplay.textContent = oid;
+            dateOutputContainer.classList.remove('hidden');
+        }
+
+        dateInput.addEventListener('input', handleDateChange);
+        btnCurrentTime.addEventListener('click', () => {
+            const now = new Date();
+            // Format to YYYY-MM-DDTHH:MM (local time for datetime-local input)
+            const tzOffset = now.getTimezoneOffset() * 60000;
+            const localISOTime = (new Date(now - tzOffset)).toISOString().slice(0, 16);
+            dateInput.value = localISOTime;
+            handleDateChange();
+        });
+
+        // Copy to Clipboard Functionality
+        document.querySelectorAll('[data-copy]').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-copy');
+                const text = document.getElementById(targetId).textContent;
+                
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = button.textContent;
+                    button.textContent = 'Copied!';
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                    }, 2000);
+                });
+            });
+        });
+
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
