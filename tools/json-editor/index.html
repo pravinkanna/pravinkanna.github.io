@@ -45,10 +45,10 @@
     </style>
 </head>
 
-<body class="bg-slate-900 text-slate-200 font-sans antialiased">
-    <div id="app" class="min-h-screen flex flex-col">
+<body class="bg-slate-900 text-slate-200 font-sans antialiased overflow-hidden">
+    <div id="app" class="h-screen flex flex-col">
         <!-- Navigation -->
-        <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <nav class="flex-none bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
                     <div class="flex items-center">
@@ -102,18 +102,18 @@
         </nav>
 
         <!-- Main Content -->
-        <main class="flex-grow flex flex-col p-4 md:p-8">
-            <div class="max-w-7xl mx-auto w-full">
-                <div class="mb-8">
-                    <h1 class="text-3xl font-bold text-white mb-2">JSON Editor</h1>
-                    <p class="text-slate-400">Validate, prettify, minify and stringify your JSON data.</p>
+        <main class="flex-grow flex flex-col p-4 md:p-6 min-h-0">
+            <div class="max-w-7xl mx-auto w-full flex flex-col h-full">
+                <div class="flex-none mb-4">
+                    <h1 class="text-2xl font-bold text-white">JSON Editor</h1>
+                    <p class="text-sm text-slate-400">Validate, prettify, minify and stringify your JSON data.</p>
                 </div>
 
                 <!-- Tool Container -->
-                <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 min-h-[500px] lg:min-h-[600px]">
+                <div class="flex-grow grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 min-h-0 overflow-y-auto lg:overflow-hidden p-1">
                     <!-- Input Panel -->
-                    <div class="flex flex-col space-y-2 h-[300px] lg:h-auto">
-                        <label for="json-input" class="text-sm font-mono text-slate-400 flex justify-between">
+                    <div class="flex flex-col space-y-2 h-[40vh] lg:h-full">
+                        <label for="json-input" class="flex-none text-sm font-mono text-slate-400 flex justify-between">
                             <span>Input (Raw JSON)</span>
                             <span id="input-stats" class="text-[10px]">0 characters</span>
                         </label>
@@ -123,8 +123,8 @@
                     </div>
 
                     <!-- Control Panel -->
-                    <div class="flex flex-row lg:flex-col justify-center items-center gap-2 lg:px-2 flex-wrap lg:flex-nowrap">
-                        <div class="w-full sm:w-auto lg:w-full flex flex-col gap-1 mb-0 lg:mb-2">
+                    <div class="flex-none flex flex-row lg:flex-col justify-center items-center gap-2 lg:px-2 flex-wrap lg:flex-nowrap py-2">
+                        <div class="w-full sm:w-auto lg:w-full flex flex-col gap-1">
                             <label for="indent-select" class="text-[10px] font-mono text-slate-500 uppercase">Indent</label>
                             <select id="indent-select" class="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-xs font-mono text-slate-300 focus:outline-none focus:border-accent/50 cursor-pointer">
                                 <option value="2">2 Spaces</option>
@@ -135,7 +135,7 @@
                         <button id="btn-validate" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Validate JSON">
                             Validate
                         </button>
-                        <div class="hidden lg:block w-px h-8 bg-slate-800 my-2"></div>
+                        <div class="hidden lg:block w-px h-8 bg-slate-800 my-1"></div>
                         <button id="btn-prettify" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Format JSON">
                             Prettify
                         </button>
@@ -145,15 +145,15 @@
                         <button id="btn-stringify" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Escape JSON string">
                             Stringify
                         </button>
-                        <div class="hidden lg:block w-px h-8 bg-slate-800 my-2"></div>
+                        <div class="hidden lg:block w-px h-8 bg-slate-800 my-1"></div>
                         <button id="btn-clear" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-900 border border-red-900/30 text-red-400/70 rounded text-xs font-mono hover:bg-red-900/20 hover:text-red-400 transition-all whitespace-nowrap" title="Clear all fields">
                             Clear
                         </button>
                     </div>
 
                     <!-- Output Panel -->
-                    <div class="flex flex-col space-y-2 h-[300px] lg:h-auto">
-                        <div class="flex justify-between items-center">
+                    <div class="flex flex-col space-y-2 h-[40vh] lg:h-full">
+                        <div class="flex-none flex justify-between items-center">
                             <label for="json-output" class="text-sm font-mono text-slate-400">Output</label>
                             <div class="flex gap-4">
                                 <button id="btn-copy" class="text-[10px] font-mono text-slate-500 hover:text-accent uppercase tracking-wider transition-colors">Copy</button>
@@ -167,14 +167,14 @@
                 </div>
 
                 <!-- Status Bar -->
-                <div id="status-bar" class="mt-4 p-3 rounded border border-transparent font-mono text-xs hidden">
+                <div id="status-bar" class="flex-none mt-4 p-3 rounded border border-transparent font-mono text-xs hidden">
                     <!-- Validation messages will appear here -->
                 </div>
             </div>
         </main>
 
         <!-- Footer -->
-        <footer class="py-12 border-t border-slate-800 bg-slate-900">
+        <footer class="flex-none py-6 border-t border-slate-800 bg-slate-900">
             <div
                 class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
                 <div class="text-accent font-mono font-bold text-xl tracking-tighter">
