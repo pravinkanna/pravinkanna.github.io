@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Editor | Pravin.dev</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration for Tailwind CDN -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            200: '#e2e8f0',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                        },
+                        accent: '#06b6d4',
+                    },
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        mono: ['"Fira Code"', '"Roboto Mono"', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .mobile-menu-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-slate-200 font-sans antialiased overflow-hidden">
+    <div id="app" class="h-screen flex flex-col">
+        <!-- Navigation -->
+        <nav class="flex-none bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="/" class="text-accent font-mono font-bold text-xl tracking-tighter">
+                            pravin<span class="text-slate-500">.dev</span>
+                        </a>
+                    </div>
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-8 font-mono text-sm">
+                            <a href="/#home" class="hover:text-accent px-3 py-2 transition-colors">Home</a>
+                            <a href="/#about" class="hover:text-accent px-3 py-2 transition-colors">Experience</a>
+                            <a href="/#skills" class="hover:text-accent px-3 py-2 transition-colors">Skills</a>
+                            <a href="/#projects" class="hover:text-accent px-3 py-2 transition-colors">Projects</a>
+                            <a href="/tools" class="hover:text-accent px-3 py-2 transition-colors">Tools</a>
+                        </div>
+                    </div>
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" type="button"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none transition-colors"
+                            aria-controls="mobile-menu" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg id="menu-icon-closed" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                            <svg id="menu-icon-opened" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-mono text-center">
+                    <a href="/#home" class="block px-3 py-4 text-base hover:text-accent transition-colors">Home</a>
+                    <a href="/#about"
+                        class="block px-3 py-4 text-base hover:text-accent transition-colors">Experience</a>
+                    <a href="/#skills" class="block px-3 py-4 text-base hover:text-accent transition-colors">Skills</a>
+                    <a href="/#projects"
+                        class="block px-3 py-4 text-base hover:text-accent transition-colors">Projects</a>
+                    <a href="/tools" class="block px-3 py-4 text-base hover:text-accent transition-colors">Tools</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-grow flex flex-col p-4 md:p-6 min-h-0">
+            <div class="max-w-7xl mx-auto w-full flex flex-col h-full">
+                <div class="flex-none mb-4">
+                    <h1 class="text-2xl font-bold text-white">JSON Editor</h1>
+                    <p class="text-sm text-slate-400">Validate, prettify, minify and stringify your JSON data.</p>
+                </div>
+
+                <!-- Tool Container -->
+                <div class="flex-grow grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 min-h-0 overflow-y-auto lg:overflow-hidden p-1">
+                    <!-- Input Panel -->
+                    <div class="flex flex-col space-y-2 h-[40vh] lg:h-full">
+                        <label for="json-input" class="flex-none text-sm font-mono text-slate-400 flex justify-between">
+                            <span>Input (Raw JSON)</span>
+                            <span id="input-stats" class="text-[10px]">0 characters</span>
+                        </label>
+                        <textarea id="json-input" 
+                            class="flex-grow bg-slate-800/50 border border-slate-800 rounded-lg p-4 font-mono text-sm text-slate-200 focus:outline-none focus:border-accent/50 resize-none placeholder:text-slate-600 transition-colors"
+                            placeholder="Paste your JSON here..."></textarea>
+                    </div>
+
+                    <!-- Control Panel -->
+                    <div class="flex-none flex flex-row lg:flex-col justify-center items-center gap-2 lg:px-2 flex-wrap lg:flex-nowrap py-2">
+                        <div class="w-full sm:w-auto lg:w-full flex flex-col gap-1">
+                            <label for="indent-select" class="text-[10px] font-mono text-slate-500 uppercase">Indent</label>
+                            <select id="indent-select" class="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-xs font-mono text-slate-300 focus:outline-none focus:border-accent/50 cursor-pointer">
+                                <option value="2">2 Spaces</option>
+                                <option value="4">4 Spaces</option>
+                                <option value="tab">Tabs</option>
+                            </select>
+                        </div>
+                        <button id="btn-validate" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Validate JSON">
+                            Validate
+                        </button>
+                        <div class="hidden lg:block w-px h-8 bg-slate-800 my-1"></div>
+                        <button id="btn-prettify" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Format JSON">
+                            Prettify
+                        </button>
+                        <button id="btn-minify" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Minify JSON">
+                            Minify
+                        </button>
+                        <button id="btn-stringify" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Escape JSON string">
+                            Stringify
+                        </button>
+                        <button id="btn-unstringify" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 hover:text-accent transition-all whitespace-nowrap" title="Unescape JSON string">
+                            Unstringify
+                        </button>
+                        <div class="hidden lg:block w-px h-8 bg-slate-800 my-1"></div>
+                        <button id="btn-clear" class="flex-grow sm:flex-grow-0 lg:w-full px-4 py-2 bg-slate-900 border border-red-900/30 text-red-400/70 rounded text-xs font-mono hover:bg-red-900/20 hover:text-red-400 transition-all whitespace-nowrap" title="Clear all fields">
+                            Clear
+                        </button>
+                    </div>
+
+                    <!-- Output Panel -->
+                    <div class="flex flex-col space-y-2 h-[40vh] lg:h-full">
+                        <div class="flex-none flex justify-between items-center">
+                            <label for="json-output" class="text-sm font-mono text-slate-400">Output</label>
+                            <div class="flex gap-4">
+                                <button id="btn-copy" class="text-[10px] font-mono text-slate-500 hover:text-accent uppercase tracking-wider transition-colors">Copy</button>
+                                <button id="btn-download" class="text-[10px] font-mono text-slate-500 hover:text-accent uppercase tracking-wider transition-colors">Download</button>
+                            </div>
+                        </div>
+                        <textarea id="json-output" 
+                            class="flex-grow bg-slate-800/20 border border-slate-800 rounded-lg p-4 font-mono text-sm text-slate-400 focus:outline-none resize-none transition-colors"
+                            placeholder="Output will appear here..." readonly></textarea>
+                    </div>
+                </div>
+
+                <!-- Status Bar -->
+                <div id="status-bar" class="flex-none mt-4 p-3 rounded border border-transparent font-mono text-xs hidden">
+                    <!-- Validation messages will appear here -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="flex-none py-6 border-t border-slate-800 bg-slate-900">
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-accent font-mono font-bold text-xl tracking-tighter">
+                    pravin<span class="text-slate-500">.dev</span>
+                </div>
+                <div class="flex gap-8">
+                    <a href="https://github.com/pravinkanna"
+                        class="text-slate-400 hover:text-accent transition-colors">GitHub</a>
+                    <a href="https://linkedin.com/in/pravinkanna"
+                        class="text-slate-400 hover:text-accent transition-colors">LinkedIn</a>
+                    <a href="mailto:pravinkannap@gmail.com"
+                        class="text-slate-400 hover:text-accent transition-colors">Email</a>
+                </div>
+                <div class="text-slate-500 text-sm font-mono">
+                    &copy; 2026 Pravinkanna Parthiban
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Logic components (matching json-editor.logic.js)
+        const Logic = {
+            validateJSON(input) {
+                if (!input || input.trim() === '') {
+                    return { valid: false, message: 'Input is empty' };
+                }
+                try {
+                    JSON.parse(input);
+                    return { valid: true, message: 'Valid JSON' };
+                } catch (e) {
+                    return { valid: false, message: e.message };
+                }
+            },
+            formatJSON(input, indent) {
+                if (!input || input.trim() === '') {
+                    return { valid: false, message: 'Input is empty' };
+                }
+                try {
+                    const parsed = JSON.parse(input);
+                    let space = 2;
+                    if (indent === '4') space = 4;
+                    if (indent === 'tab') space = '\t';
+                    const output = JSON.stringify(parsed, null, space);
+                    return { valid: true, output };
+                } catch (e) {
+                    return { valid: false, message: e.message };
+                }
+            },
+            minifyJSON(input) {
+                if (!input || input.trim() === '') {
+                    return { valid: false, message: 'Input is empty' };
+                }
+                try {
+                    const parsed = JSON.parse(input);
+                    const output = JSON.stringify(parsed);
+                    return { valid: true, output };
+                } catch (e) {
+                    return { valid: false, message: e.message };
+                }
+            },
+            stringifyJSON(input) {
+                if (!input || input.trim() === '') {
+                    return { valid: false, message: 'Input is empty' };
+                }
+                try {
+                    JSON.parse(input);
+                    const output = JSON.stringify(input);
+                    return { valid: true, output };
+                } catch (e) {
+                    return { valid: false, message: e.message };
+                }
+            },
+            unstringifyJSON(input) {
+                if (!input || input.trim() === '') {
+                    return { valid: false, message: 'Input is empty' };
+                }
+                try {
+                    const parsed = JSON.parse(input);
+                    if (typeof parsed !== 'string') {
+                        return { valid: false, message: 'Input is not a stringified JSON' };
+                    }
+                    return { valid: true, output: parsed };
+                } catch (e) {
+                    return { valid: false, message: e.message };
+                }
+            }
+        };
+
+        // DOM Elements
+        const jsonInput = document.getElementById('json-input');
+        const jsonOutput = document.getElementById('json-output');
+        const inputStats = document.getElementById('input-stats');
+        const statusBar = document.getElementById('status-bar');
+        
+        const btnValidate = document.getElementById('btn-validate');
+        const btnPrettify = document.getElementById('btn-prettify');
+        const btnMinify = document.getElementById('btn-minify');
+        const btnStringify = document.getElementById('btn-stringify');
+        const btnUnstringify = document.getElementById('btn-unstringify');
+        const btnClear = document.getElementById('btn-clear');
+        const btnCopy = document.getElementById('btn-copy');
+        const btnDownload = document.getElementById('btn-download');
+        const indentSelect = document.getElementById('indent-select');
+
+        // Helper: Update Status Bar
+        function updateStatus(message, type = 'info') {
+            statusBar.classList.remove('hidden', 'bg-green-900/20', 'text-green-400', 'border-green-900/30', 'bg-red-900/20', 'text-red-400', 'border-red-900/30');
+            
+            if (type === 'success') {
+                statusBar.classList.add('bg-green-900/20', 'text-green-400', 'border-green-900/30');
+            } else if (type === 'error') {
+                statusBar.classList.add('bg-red-900/20', 'text-red-400', 'border-red-900/30');
+            }
+            
+            statusBar.textContent = message;
+            statusBar.classList.remove('hidden');
+        }
+
+        // Helper: Clear Status
+        function clearStatus() {
+            statusBar.classList.add('hidden');
+            statusBar.textContent = '';
+        }
+
+        // Helper: Debounce
+        function debounce(func, timeout = 500) {
+            let timer;
+            return (...args) => {
+                clearTimeout(timer);
+                timer = setTimeout(() => { func.apply(this, args); }, timeout);
+            };
+        }
+
+        const realTimeValidate = debounce(() => {
+            const input = jsonInput.value;
+            if (!input.trim()) {
+                clearStatus();
+                jsonInput.classList.remove('border-green-900/50', 'border-red-900/50');
+                return;
+            }
+            
+            const result = Logic.validateJSON(input);
+            if (result.valid) {
+                updateStatus(result.message, 'success');
+                jsonInput.classList.remove('border-red-900/50');
+                jsonInput.classList.add('border-green-900/50');
+            } else {
+                updateStatus(result.message, 'error');
+                jsonInput.classList.remove('border-green-900/50');
+                jsonInput.classList.add('border-red-900/50');
+            }
+        });
+
+        // Event: Input stats and real-time validation
+        jsonInput.addEventListener('input', () => {
+            const length = jsonInput.value.length;
+            inputStats.textContent = `${length} characters`;
+            realTimeValidate();
+        });
+
+        // Event: Validate
+        btnValidate.addEventListener('click', () => {
+            const input = jsonInput.value;
+            const result = Logic.validateJSON(input);
+            
+            if (result.valid) {
+                updateStatus(result.message, 'success');
+                jsonInput.classList.remove('border-red-900/50');
+                jsonInput.classList.add('border-green-900/50');
+            } else {
+                updateStatus(result.message, 'error');
+                jsonInput.classList.remove('border-green-900/50');
+                jsonInput.classList.add('border-red-900/50');
+            }
+        });
+
+        // Event: Prettify
+        btnPrettify.addEventListener('click', () => {
+            const input = jsonInput.value;
+            const indent = indentSelect.value;
+            const result = Logic.formatJSON(input, indent);
+            
+            if (result.valid) {
+                jsonOutput.value = result.output;
+                updateStatus('JSON formatted successfully', 'success');
+                jsonInput.classList.remove('border-red-900/50');
+                jsonInput.classList.add('border-green-900/50');
+            } else {
+                updateStatus(result.message, 'error');
+                jsonInput.classList.remove('border-green-900/50');
+                jsonInput.classList.add('border-red-900/50');
+            }
+        });
+
+        // Event: Minify
+        btnMinify.addEventListener('click', () => {
+            const input = jsonInput.value;
+            const result = Logic.minifyJSON(input);
+            
+            if (result.valid) {
+                jsonOutput.value = result.output;
+                updateStatus('JSON minified successfully', 'success');
+                jsonInput.classList.remove('border-red-900/50');
+                jsonInput.classList.add('border-green-900/50');
+            } else {
+                updateStatus(result.message, 'error');
+                jsonInput.classList.remove('border-green-900/50');
+                jsonInput.classList.add('border-red-900/50');
+            }
+        });
+
+        // Event: Stringify
+        btnStringify.addEventListener('click', () => {
+            const input = jsonInput.value;
+            const result = Logic.stringifyJSON(input);
+            
+            if (result.valid) {
+                jsonOutput.value = result.output;
+                updateStatus('JSON stringified successfully', 'success');
+                jsonInput.classList.remove('border-red-900/50');
+                jsonInput.classList.add('border-green-900/50');
+            } else {
+                updateStatus(result.message, 'error');
+                jsonInput.classList.remove('border-green-900/50');
+                jsonInput.classList.add('border-red-900/50');
+            }
+        });
+
+        // Event: Unstringify
+        btnUnstringify.addEventListener('click', () => {
+            const input = jsonInput.value;
+            const result = Logic.unstringifyJSON(input);
+            
+            if (result.valid) {
+                jsonOutput.value = result.output;
+                updateStatus('JSON unstringified successfully', 'success');
+                jsonInput.classList.remove('border-red-900/50');
+                jsonInput.classList.add('border-green-900/50');
+            } else {
+                updateStatus(result.message, 'error');
+                jsonInput.classList.remove('border-green-900/50');
+                jsonInput.classList.add('border-red-900/50');
+            }
+        });
+
+        // Event: Copy to Clipboard
+        btnCopy.addEventListener('click', () => {
+            const content = jsonOutput.value;
+            if (!content) return;
+            
+            navigator.clipboard.writeText(content).then(() => {
+                const originalText = btnCopy.textContent;
+                btnCopy.textContent = 'Copied!';
+                btnCopy.classList.add('text-accent');
+                
+                setTimeout(() => {
+                    btnCopy.textContent = originalText;
+                    btnCopy.classList.remove('text-accent');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                updateStatus('Failed to copy to clipboard', 'error');
+            });
+        });
+
+        // Event: Download JSON
+        btnDownload.addEventListener('click', () => {
+            const content = jsonOutput.value;
+            if (!content) return;
+            
+            const blob = new Blob([content], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'data.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
+        // Event: Clear All
+        btnClear.addEventListener('click', () => {
+            jsonInput.value = '';
+            jsonOutput.value = '';
+            inputStats.textContent = '0 characters';
+            clearStatus();
+            jsonInput.classList.remove('border-green-900/50', 'border-red-900/50');
+        });
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconClosed = document.getElementById('menu-icon-closed');
+        const iconOpened = document.getElementById('menu-icon-opened');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                iconClosed.classList.add('hidden');
+                iconOpened.classList.remove('hidden');
+                document.body.classList.add('mobile-menu-open');
+                mobileMenuButton.setAttribute('aria-expanded', 'true');
+            } else {
+                mobileMenu.classList.add('hidden');
+                iconClosed.classList.remove('hidden');
+                iconOpened.classList.add('hidden');
+                document.body.classList.remove('mobile-menu-open');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMenu);
+        const navLinks = mobileMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) toggleMenu();
+            });
+        });
+    </script>
+</body>
+
+</html>
