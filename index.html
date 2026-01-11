@@ -19,6 +19,7 @@
                         accent: '#06b6d4',
                     },
                     fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
                         mono: ['"Fira Code"', '"Roboto Mono"', 'monospace'],
                     },
                 }
@@ -28,21 +29,18 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        body {
-            font-family: 'Fira Code', 'Roboto Mono', monospace;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-slate-900 text-slate-200">
+<body class="bg-slate-900 text-slate-200 font-sans">
     <div id="app">
         <!-- Temporary Content for Verification -->
-        <div class="flex h-screen items-center justify-center">
-            <h1 class="text-3xl font-bold text-accent">
+        <div class="flex h-screen items-center justify-center flex-col gap-4">
+            <h1 class="text-4xl font-bold text-accent font-mono">
                 System Initialized.
             </h1>
+            <p class="text-lg text-slate-400">
+                Awaiting commands...
+            </p>
         </div>
     </div>
 </body>

@@ -9,6 +9,7 @@ module.exports = {
         accent: '#06b6d4',
       },
       fontFamily: {
+        sans: ['"Inter"', 'sans-serif'],
         mono: ['"Fira Code"', '"Roboto Mono"', 'monospace'],
       },
     },
