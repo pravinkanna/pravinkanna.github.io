@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Disallow conductor directory
+Disallow: /conductor/
+
+Sitemap: https://pravinkanna.com/sitemap.xml
