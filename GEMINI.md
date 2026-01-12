@@ -1,44 +1,55 @@
 # Project Context: pravinkanna-portfolio
 
 ## Project Overview
-This is a personal portfolio website for Pravin Kanna, hosted on GitHub Pages. It showcases the developer's projects, education, and contact information. The project is a static site built with HTML, Tailwind CSS (via CDN), and Vanilla JavaScript.
+This is a personal portfolio website for Pravin Kanna, hosted on GitHub Pages. It showcases the developer's projects, education, and contact information. The project is a static site built with HTML, Tailwind CSS (v4), and Vanilla JavaScript.
 
 ## Technology Stack
-- **Frontend:** HTML5, Tailwind CSS, Vanilla JavaScript.
-- **Styling:** Tailwind CSS (loaded via CDN) with custom configuration in `index.html`.
-- **Package Manager:** None (Libraries are loaded via CDNs).
+- **Frontend:** HTML5, Tailwind CSS (v4), Vanilla JavaScript.
+- **Styling:** Tailwind CSS compiled via CLI. Custom styles defined in `src/input.css`.
+- **Package Manager:** npm.
+- **Build Tool:** Tailwind CLI.
 
 ## Key Files & Directories
 - **`index.html`**: The main entry point for the website (Home page).
-- **`css/`**: Contains `theme.css` (custom styles).
+- **`src/`**: Contains the source CSS.
+  - `input.css`: The main entry point for styles, including Tailwind imports and custom `@theme` configuration.
+- **`dist/`**: Contains the compiled assets.
+  - `output.css`: The compiled, minified CSS file used by the HTML.
+- **`package.json`**: Manages dependencies and build scripts.
 - **`js/`**: Contains `theme.js` (custom scripts).
-- **`tools/`**: Directory containing various standalone sub-projects/tools (e.g., `json-editor`, `wealth-journey`).
+- **`tools/`**: Directory containing various standalone sub-projects/tools.
 - **`conductor/`**: Contains project management and documentation files.
 
 ## Build & Run Instructions
 
 ### Prerequisites
-- A modern web browser.
-- A simple static file server (optional, but recommended for development).
+- Node.js and npm installed.
 
 ### Setup
-No installation required.
+```bash
+npm install
+```
 
 ### Development
-Since the project uses Tailwind CSS via CDN, there is no build step.
-Simply open `index.html` in a browser or serve the directory using a static server:
-
+To compile CSS and watch for changes:
 ```bash
-# Example using python
-python3 -m http.server
+npm run watch
+```
+This command runs the Tailwind CLI in watch mode, updating `dist/output.css` whenever source files change.
+
+### Build
+To create a minified production build:
+```bash
+npm run build
 ```
 
 ## Development Conventions
 - **Styling:** Use Tailwind CSS utility classes directly in the HTML.
-- **Scripts:** Keep JavaScript logic inline or in `js/` directory if it grows complex.
+- **Custom Styles:** Add custom CSS or theme configuration (colors, fonts) to `src/input.css`.
 - **Responsiveness:** Use Tailwind's responsive prefixes (e.g., `md:`, `lg:`).
+- **Build:** Always run `npm run build` before committing to ensure the latest styles are available in `dist/`.
 
 ## Current State Notes
-- The site uses a single-page layout with smooth scrolling to sections (`#home`, `#about`, etc.).
-- Navigation links for sub-pages (like `/tools`) should point to existing directories or HTML files.
-- Google Analytics and Clarity tracking are integrated.
+- The site has been migrated from a CDN-based Tailwind setup to a local CLI build (v4).
+- The `css/` directory has been removed in favor of `src/` and `dist/`.
+- Navigation links for sub-pages (like `/tools`) point to existing directories.
