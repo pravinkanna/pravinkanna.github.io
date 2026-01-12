@@ -1,7 +1,7 @@
 # Project Context: pravinkanna-portfolio
 
 ## Project Overview
-This is a personal portfolio website for Pravin Kanna, hosted on GitHub Pages. It showcases the developer's projects, education, and contact information. The project is a static site built with HTML, Tailwind CSS (v4), and Vanilla JavaScript.
+This is a personal portfolio website for Pravinkanna, hosted on GitHub Pages. It showcases the developer's projects, education, and contact information. The project is a static site built with HTML, Tailwind CSS (v4), and Vanilla JavaScript.
 
 ## Technology Stack
 - **Frontend:** HTML5, Tailwind CSS (v4), Vanilla JavaScript.
