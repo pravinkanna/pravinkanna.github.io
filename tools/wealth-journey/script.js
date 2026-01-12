@@ -529,6 +529,8 @@ function toggleSidebar() {
             sidebarContent.classList.add('opacity-0', 'pointer-events-none');
         }
     } else {
+        sidebar.classList.remove('w-0', 'border-0');
+        sidebarContent.classList.remove('opacity-0', 'pointer-events-none');
         sidebar.classList.toggle('hidden');
     }
     setTimeout(() => {
