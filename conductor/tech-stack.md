@@ -8,7 +8,8 @@
 
 ## Development & Tooling
 - **Git:** Version control for project management.
-- **No-Build:** The project uses a CDN-based approach for dependencies, requiring no build steps or package managers.
+- **NPM:** Package management for dependencies.
+- **Tailwind CLI:** Build-time CSS compilation and optimization.
 
 ## Deployment & Hosting
 - **GitHub Pages:** Static site hosting for the portfolio.
