@@ -3,9 +3,11 @@ const CURRENCY_SYMBOL = "₹";
 const LOCALE = "en-IN";
 
 let funds = [
-    { name: "Nifty 50 Index", amount: 10000, cagr: 12.0 },
-    { name: "Nasdaq 100", amount: 10000, cagr: 15.0 },
-    { name: "Liquid Fund", amount: 5000, cagr: 6.0 },
+    { name: "Nifty 50 Index", amount: 26000, cagr: 12.0 },
+    { name: "Nifty Midcap 150", amount: 16000, cagr: 14.0 },
+    { name: "Nifty Smallcap 50", amount: 10000, cagr: 15.0 },
+    { name: "Arbitrage Fund", amount: 6500, cagr: 6.5 },
+    { name: "Gold ETF", amount: 6500, cagr: 11.0 },
 ];
 
 let wealthProjectionChart = null;
@@ -168,7 +170,7 @@ function calculate() {
                 if (currentTotalValue >= m.val && !hitMilestones.has(m.label)) {
                     milestones.push({
                         label: m.label,
-                        age: Math.round(currentAge + year - 1 + (month / 12)), // Corrected Age Calc
+                        age: Math.floor(currentAge + year - 1 + (month / 12)), // Corrected Age Calc
                         invested: fundStates.reduce((sum, f) => sum + f.totalInvested, 0),
                         value: currentTotalValue
                     });
@@ -283,7 +285,8 @@ function updateCharts(labels, invested, value, inflationAdjusted, profit, sipDat
                 backgroundColor: colors[i % colors.length] + '80', // Transparent version
                 stack: 'Invested',
                 barPercentage: 0.8,
-                categoryPercentage: 0.9
+                categoryPercentage: 0.9,
+                order: 1
             });
         }
         for (let i = 0; i < numFunds; i++) {
@@ -293,7 +296,8 @@ function updateCharts(labels, invested, value, inflationAdjusted, profit, sipDat
                 backgroundColor: colors[i % colors.length], // Solid version
                 stack: 'Value',
                 barPercentage: 0.8,
-                categoryPercentage: 0.9
+                categoryPercentage: 0.9,
+                order: 1
             });
         }
     }
@@ -362,7 +366,19 @@ function updateCharts(labels, invested, value, inflationAdjusted, profit, sipDat
                 x: { grid: { display: false }, title: { display: true, text: 'Your Age', color: '#94a3b8' } },
                 y: { grid: { color: '#f1f5f9' }, ticks: { callback: v => formatBigCurrency(v), color: '#94a3b8' } }
             },
-            plugins: { legend: { display: false } }
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            let label = context.dataset.label || '';
+                            if (label) label += ': ';
+                            if (context.parsed.y !== null) label += formatBigCurrency(context.parsed.y);
+                            return label;
+                        }
+                    }
+                }
+            }
         }
     });
 
@@ -393,7 +409,17 @@ function updateCharts(labels, invested, value, inflationAdjusted, profit, sipDat
                 y: { grid: { color: '#f1f5f9' }, ticks: { callback: v => formatBigCurrency(v), color: '#94a3b8' } }
             },
             plugins: {
-                legend: { position: 'top', align: 'end', labels: { boxWidth: 10, usePointStyle: true } }
+                legend: { position: 'top', align: 'end', labels: { boxWidth: 10, usePointStyle: true } },
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            let label = context.dataset.label || '';
+                            if (label) label += ': ';
+                            if (context.parsed.y !== null) label += formatBigCurrency(context.parsed.y);
+                            return label;
+                        }
+                    }
+                }
             }
         }
     });
@@ -415,7 +441,19 @@ function updateCharts(labels, invested, value, inflationAdjusted, profit, sipDat
                     x: { grid: { display: false }, title: { display: true, text: 'Your Age', color: '#94a3b8' } },
                     y: { grid: { color: '#f1f5f9' }, ticks: { callback: v => formatCurrency(v), color: '#94a3b8' } }
                 },
-                plugins: { legend: { display: false } }
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                let label = context.dataset.label || '';
+                                if (label) label += ': ';
+                                if (context.parsed.y !== null) label += formatBigCurrency(context.parsed.y);
+                                return label;
+                            }
+                        }
+                    }
+                }
             }
         });
     }
@@ -440,7 +478,7 @@ function updateCharts(labels, invested, value, inflationAdjusted, profit, sipDat
                         label: function (context) {
                             const total = context.dataset.data.reduce((a, b) => a + b, 0);
                             const percentage = ((context.parsed / total) * 100).toFixed(1) + '%';
-                            return `${context.label}: ${formatCurrency(context.parsed)} (${percentage})`;
+                            return `${context.label}: ${formatBigCurrency(context.parsed)} (${percentage})`;
                         }
                     }
                 }
