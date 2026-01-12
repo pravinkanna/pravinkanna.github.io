@@ -17,7 +17,7 @@
     - [x] Sub-task: Add OG and Twitter tags to `tools/index.html` and tool sub-pages.
 - [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
-## Phase 2: Technical SEO & Structured Data
+## Phase 2: Technical SEO & Structured Data [checkpoint: 10b9174]
 - [x] Task: Create `robots.txt`
     - [x] Sub-task: Define user-agents and sitemap location.
 - [x] Task: Create `sitemap.xml`
@@ -25,13 +25,13 @@
 - [x] Task: Implement JSON-LD Structured Data
     - [x] Sub-task: Add `Schema.org/Person` to `index.html`.
     - [x] Sub-task: Add `Schema.org/SoftwareApplication` and `BreadcrumbList` to each tool page.
-- [~] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
 ## Phase 3: Performance & Accessibility (Lighthouse Elite)
-- [ ] Task: Accessibility Audit & Fixes
-    - [ ] Sub-task: Run Lighthouse audit on Home. Fix semantic HTML, ARIA labels, contrast.
-    - [ ] Sub-task: Run Lighthouse audit on Tools. Fix semantic HTML, ARIA labels, contrast.
-- [ ] Task: Performance Tuning
-    - [ ] Sub-task: Optimize images (size/format) if flagged.
-    - [ ] Sub-task: Ensure text compression and efficient asset loading (check build output).
-- [ ] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md)
+- [x] Task: Accessibility Audit & Fixes
+    - [x] Sub-task: Run Lighthouse audit on Home. Fix semantic HTML, ARIA labels, contrast.
+    - [x] Sub-task: Run Lighthouse audit on Tools. Fix semantic HTML, ARIA labels, contrast.
+- [x] Task: Performance Tuning
+    - [x] Sub-task: Optimize images (size/format) if flagged.
+    - [x] Sub-task: Ensure text compression and efficient asset loading (check build output).
+- [~] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md)
