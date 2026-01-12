@@ -1,0 +1,8 @@
+{
+  "track_id": "tailwind-prod_20260112",
+  "type": "chore",
+  "status": "new",
+  "created_at": "2026-01-12T00:00:00Z",
+  "updated_at": "2026-01-12T00:00:00Z",
+  "description": "Migrate from CDN-based Tailwind CSS to a production-ready Tailwind CLI setup."
+}
