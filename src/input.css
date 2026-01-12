@@ -42,8 +42,9 @@
 
   .skill-card:hover {
     @apply -translate-y-1;
-    border-color: rgba(6, 182, 212, 0.4);
+    border-color: rgba(6, 182, 212, 0.6);
     background-color: rgba(30, 41, 59, 0.8);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
   }
 
   .timeline-item::before {

@@ -252,6 +252,7 @@ A task is complete when:
 8. Implementation notes added to `plan.md`
 9. Changes committed with proper message
 10. Git note with task summary attached to the commit
+11. If a new public page is created, `sitemap.xml` and `robots.txt` (if applicable) are updated.
 
 ## Emergency Procedures
 

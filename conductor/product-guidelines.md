@@ -2,6 +2,7 @@
 
 ## Visual Identity
 - **Tech-Centric & Modern:** The design should reflect a "developer-first" aesthetic.
+- **Standardized Branding:** Use the handle "Pravinkanna" consistently across all platforms and metadata.
 - **Aesthetic Elements:** Incorporate a dark mode theme, use monospace fonts for code snippets and headers, and utilize modern UI elements.
 - **Focus:** Maintain a sleek, terminal-inspired or IDE-like look where appropriate, without sacrificing usability.
 

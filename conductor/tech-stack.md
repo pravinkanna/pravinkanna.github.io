@@ -10,6 +10,11 @@
 - **Git:** Version control for project management.
 - **NPM:** Package management for dependencies.
 - **Tailwind CLI:** Build-time CSS compilation and optimization.
+- **Structured Data (JSON-LD):** For enhanced SEO and rich search result snippets.
+
+## Technical SEO
+- **Sitemaps:** Static `sitemap.xml` for search engine crawling.
+- **Robots.txt:** Directing crawlers and search engine bots.
 
 ## Deployment & Hosting
 - **GitHub Pages:** Static site hosting for the portfolio.
