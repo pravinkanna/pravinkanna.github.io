@@ -6,9 +6,9 @@
 - **Vanilla JavaScript:** For DOM manipulation and interactivity (e.g., mobile menu toggle).
 - **Chart.js:** For rendering interactive data visualizations and financial charts.
 
-## Build & Tooling
-- **npm:** Package management for development dependencies.
+## Development & Tooling
 - **Git:** Version control for project management.
+- **No-Build:** The project uses a CDN-based approach for dependencies, requiring no build steps or package managers.
 
 ## Deployment & Hosting
 - **GitHub Pages:** Static site hosting for the portfolio.
