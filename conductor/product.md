@@ -13,5 +13,6 @@ To build a comprehensive personal portfolio that effectively showcases professio
 ## Core Features
 - **Professional Timeline:** A chronological display of career history and milestones.
 - **Skills Matrix:** A categorized presentation of technical skills and technologies.
+- **SEO & Discoverability:** Fully optimized for search engines with curated meta tags, Open Graph data, and valid JSON-LD structured data for rich search results.
 - **Blog Section:** A dedicated area at `/blogs` for sharing technical insights and articles.
 - **Developer Tools:** A centralized hub at `/tools/` hosting a suite of browser-based utilities, including the Wealth Journey financial visualizer, a JSON Editor, and a MongoDB ObjectID Converter.
