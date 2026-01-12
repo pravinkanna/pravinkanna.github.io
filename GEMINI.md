@@ -1,22 +1,24 @@
 # Project Context: pravinkanna-portfolio
 
 ## Project Overview
-This is a personal portfolio website for Pravin Kanna, hosted on GitHub Pages. It showcases the developer's projects, education, and contact information. The project uses a simple structure with HTML, SCSS for styling, and vanilla JavaScript for interactivity.
+This is a personal portfolio website for Pravin Kanna, hosted on GitHub Pages. It showcases the developer's projects, education, and contact information. The project is a static site built with HTML, Tailwind CSS (v4), and Vanilla JavaScript.
 
 ## Technology Stack
-- **Frontend:** HTML5, SCSS (Sass), Vanilla JavaScript.
-- **Styling:** SCSS is compiled to CSS using `node-sass`. FontAwesome is used for icons.
+- **Frontend:** HTML5, Tailwind CSS (v4), Vanilla JavaScript.
+- **Styling:** Tailwind CSS compiled via CLI. Custom styles defined in `src/input.css`.
 - **Package Manager:** npm.
+- **Build Tool:** Tailwind CLI.
 
 ## Key Files & Directories
 - **`index.html`**: The main entry point for the website (Home page).
-- **`scss/`**: Contains the SASS source files.
-  - `main.scss`: The main entry point for styles, importing other partials.
-  - `_config.scss`, `_menu.scss`, `_mobile.scss`: Partials for configuration, menu styles, and responsiveness.
-- **`js/main.js`**: Contains the JavaScript logic, primarily for the mobile navigation toggle.
+- **`src/`**: Contains the source CSS.
+  - `input.css`: The main entry point for styles, including Tailwind imports and custom `@theme` configuration.
+- **`dist/`**: Contains the compiled assets.
+  - `output.css`: The compiled, minified CSS file used by the HTML.
 - **`package.json`**: Manages dependencies and build scripts.
-- **`dist/css/`**: The destination for compiled CSS files.
-- **`app.js`**: Currently empty, listed as main in `package.json`.
+- **`js/`**: Contains `theme.js` (custom scripts).
+- **`tools/`**: Directory containing various standalone sub-projects/tools.
+- **`conductor/`**: Contains project management and documentation files.
 
 ## Build & Run Instructions
 
@@ -29,17 +31,25 @@ npm install
 ```
 
 ### Development
-To compile SASS to CSS (with watch mode):
+To compile CSS and watch for changes:
 ```bash
-npm run sass
+npm run watch
 ```
-This command runs `node-sass` in watch mode, compiling `scss/` files to `dist/css/`.
+This command runs the Tailwind CLI in watch mode, updating `dist/output.css` whenever source files change.
+
+### Build
+To create a minified production build:
+```bash
+npm run build
+```
 
 ## Development Conventions
-- **Styling:** Use SCSS for all styling changes. Do not edit `dist/css/main.css` directly.
-- **Responsiveness:** Managed via `_mobile.scss` and media queries.
-- **Naming:** BEM-like naming is used in some places (e.g., `menu-btn`, `menu-nav`).
+- **Styling:** Use Tailwind CSS utility classes directly in the HTML.
+- **Custom Styles:** Add custom CSS or theme configuration (colors, fonts) to `src/input.css`.
+- **Responsiveness:** Use Tailwind's responsive prefixes (e.g., `md:`, `lg:`).
+- **Build:** Always run `npm run build` before committing to ensure the latest styles are available in `dist/`.
 
 ## Current State Notes
-- The navigation in `index.html` points to `/about`, `/contact`, etc., but these HTML files were not observed in the root directory scan. They may need to be created.
-- `app.js` is present but unused.
+- The site has been migrated from a CDN-based Tailwind setup to a local CLI build (v4).
+- The `css/` directory has been removed in favor of `src/` and `dist/`.
+- Navigation links for sub-pages (like `/tools`) point to existing directories.

@@ -6,9 +6,10 @@
 - **Vanilla JavaScript:** For DOM manipulation and interactivity (e.g., mobile menu toggle).
 - **Chart.js:** For rendering interactive data visualizations and financial charts.
 
-## Build & Tooling
-- **npm:** Package management for development dependencies.
+## Development & Tooling
 - **Git:** Version control for project management.
+- **NPM:** Package management for dependencies.
+- **Tailwind CLI:** Build-time CSS compilation and optimization.
 
 ## Deployment & Hosting
 - **GitHub Pages:** Static site hosting for the portfolio.

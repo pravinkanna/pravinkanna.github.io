@@ -1,7 +1,16 @@
 # config files
 .vscode
 
-#node_modules
+# dependencies
 /node_modules
+npm-debug.log
+
+# system
+.DS_Store
+Thumbs.db
+
+# documentation
 *.pdf
+
+# gemini
 .gemini/
