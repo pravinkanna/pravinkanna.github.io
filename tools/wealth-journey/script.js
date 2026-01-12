@@ -283,8 +283,7 @@ function updateCharts(labels, invested, value, inflationAdjusted, profit, sipDat
                 backgroundColor: colors[i % colors.length] + '80', // Transparent version
                 stack: 'Invested',
                 barPercentage: 0.8,
-                categoryPercentage: 0.9,
-                order: 2
+                categoryPercentage: 0.9
             });
         }
         for (let i = 0; i < numFunds; i++) {
@@ -294,8 +293,7 @@ function updateCharts(labels, invested, value, inflationAdjusted, profit, sipDat
                 backgroundColor: colors[i % colors.length], // Solid version
                 stack: 'Value',
                 barPercentage: 0.8,
-                categoryPercentage: 0.9,
-                order: 1
+                categoryPercentage: 0.9
             });
         }
     }
