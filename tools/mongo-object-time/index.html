@@ -5,21 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MongoDB ObjectID Converter | ObjectId Timestamp Extractor</title>
-    <meta name="description" content="Extract timestamps from MongoDB ObjectIDs and generate valid ObjectIDs from any date/time with this online converter.">
+    <meta name="description"
+        content="Extract timestamps from MongoDB ObjectIDs and generate valid ObjectIDs from any date/time with this online converter.">
     <link rel="canonical" href="https://pravinkanna.com/tools/mongo-object-time/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pravinkanna.com/tools/mongo-object-time/">
     <meta property="og:title" content="MongoDB ObjectID Converter | ObjectId Timestamp Extractor">
-    <meta property="og:description" content="Extract timestamps from MongoDB ObjectIDs and generate valid ObjectIDs from any date/time with this online converter.">
+    <meta property="og:description"
+        content="Extract timestamps from MongoDB ObjectIDs and generate valid ObjectIDs from any date/time with this online converter.">
     <meta property="og:image" content="https://pravinkanna.com/og-image.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://pravinkanna.com/tools/mongo-object-time/">
     <meta property="twitter:title" content="MongoDB ObjectID Converter | ObjectId Timestamp Extractor">
-    <meta property="twitter:description" content="Extract timestamps from MongoDB ObjectIDs and generate valid ObjectIDs from any date/time with this online converter.">
+    <meta property="twitter:description"
+        content="Extract timestamps from MongoDB ObjectIDs and generate valid ObjectIDs from any date/time with this online converter.">
     <meta property="twitter:image" content="https://pravinkanna.com/og-image.jpg">
 
     <!-- Structured Data -->
@@ -83,7 +86,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Shared Theme Config -->
     <script src="../../js/theme.js"></script>
-    
+
     <!-- Shared Theme CSS -->
     <link rel="stylesheet" href="../../css/theme.css">
 
@@ -93,11 +96,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500;700&display=swap"
         rel="stylesheet">
-    
+
     <style>
         .mobile-menu-open {
             overflow: hidden;
         }
+
         .input-focus:focus {
             border-color: rgba(6, 182, 212, 0.5);
             outline: none;
@@ -123,7 +127,7 @@
                             <a href="/#about" class="hover:text-accent px-3 py-2 transition-colors">Experience</a>
                             <a href="/#skills" class="hover:text-accent px-3 py-2 transition-colors">Skills</a>
                             <a href="/#projects" class="hover:text-accent px-3 py-2 transition-colors">Projects</a>
-                            <a href="/tools" class="hover:text-accent px-3 py-2 transition-colors">Tools</a>
+                            <a href="/tools/" class="hover:text-accent px-3 py-2 transition-colors">Tools</a>
                         </div>
                     </div>
                     <!-- Mobile Menu Button -->
@@ -156,7 +160,7 @@
                     <a href="/#skills" class="block px-3 py-4 text-base hover:text-accent transition-colors">Skills</a>
                     <a href="/#projects"
                         class="block px-3 py-4 text-base hover:text-accent transition-colors">Projects</a>
-                    <a href="/tools" class="block px-3 py-4 text-base hover:text-accent transition-colors">Tools</a>
+                    <a href="/tools/" class="block px-3 py-4 text-base hover:text-accent transition-colors">Tools</a>
                 </div>
             </div>
         </nav>
@@ -173,30 +177,36 @@
                     <!-- Left Column: ObjectID to Timestamp -->
                     <section class="space-y-6">
                         <div class="bg-slate-800/30 border border-slate-800 rounded-xl p-6">
-                            <h2 class="text-sm font-mono text-accent uppercase tracking-wider mb-4">ObjectID to Timestamp</h2>
-                            
+                            <h2 class="text-sm font-mono text-accent uppercase tracking-wider mb-4">ObjectID to
+                                Timestamp</h2>
+
                             <div class="space-y-4">
                                 <div>
-                                    <label for="oid-input" class="block text-xs font-mono text-slate-500 uppercase mb-2">ObjectID</label>
-                                    <input type="text" id="oid-input" 
+                                    <label for="oid-input"
+                                        class="block text-xs font-mono text-slate-500 uppercase mb-2">ObjectID</label>
+                                    <input type="text" id="oid-input"
                                         class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 font-mono text-sm text-slate-200 input-focus transition-colors"
                                         placeholder="507f1f77bcf86cd799439011" maxlength="24">
                                 </div>
-                                
+
                                 <div class="flex gap-2">
-                                    <button id="btn-sample-oid" class="px-4 py-2.5 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 transition-colors uppercase tracking-tight">Sample OID</button>
+                                    <button id="btn-sample-oid"
+                                        class="px-4 py-2.5 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 transition-colors uppercase tracking-tight">Sample
+                                        OID</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div id="oid-output-container" class="bg-slate-800/30 border border-slate-800 rounded-xl p-6 hidden">
+                        <div id="oid-output-container"
+                            class="bg-slate-800/30 border border-slate-800 rounded-xl p-6 hidden">
                             <h3 class="text-xs font-mono text-slate-500 uppercase mb-4">Extracted Information</h3>
-                            
+
                             <div class="space-y-6">
                                 <div>
                                     <div class="flex justify-between items-center mb-1">
                                         <span class="text-[10px] font-mono text-slate-500 uppercase">Local Time</span>
-                                        <button data-copy="local-time" class="p-2 -mr-2 text-[10px] font-mono text-accent hover:text-white uppercase transition-colors">Copy</button>
+                                        <button data-copy="local-time"
+                                            class="p-2 -mr-2 text-[10px] font-mono text-accent hover:text-white uppercase transition-colors">Copy</button>
                                     </div>
                                     <p id="local-time" class="text-sm text-slate-200 font-medium"></p>
                                 </div>
@@ -204,13 +214,15 @@
                                 <div>
                                     <div class="flex justify-between items-center mb-1">
                                         <span class="text-[10px] font-mono text-slate-500 uppercase">ISO 8601</span>
-                                        <button data-copy="iso-time" class="p-2 -mr-2 text-[10px] font-mono text-accent hover:text-white uppercase transition-colors">Copy</button>
+                                        <button data-copy="iso-time"
+                                            class="p-2 -mr-2 text-[10px] font-mono text-accent hover:text-white uppercase transition-colors">Copy</button>
                                     </div>
                                     <p id="iso-time" class="text-sm font-mono text-slate-400"></p>
                                 </div>
 
                                 <div>
-                                    <span class="text-[10px] font-mono text-slate-500 uppercase block mb-1">Relative</span>
+                                    <span
+                                        class="text-[10px] font-mono text-slate-500 uppercase block mb-1">Relative</span>
                                     <p id="relative-time" class="text-sm text-accent font-medium"></p>
                                 </div>
                             </div>
@@ -224,33 +236,45 @@
                     <!-- Right Column: Timestamp to ObjectID -->
                     <section class="space-y-6">
                         <div class="bg-slate-800/30 border border-slate-800 rounded-xl p-6">
-                            <h2 class="text-sm font-mono text-accent uppercase tracking-wider mb-4">Timestamp to ObjectID</h2>
-                            
+                            <h2 class="text-sm font-mono text-accent uppercase tracking-wider mb-4">Timestamp to
+                                ObjectID</h2>
+
                             <div class="space-y-4">
                                 <div>
-                                    <label for="date-input" class="block text-xs font-mono text-slate-500 uppercase mb-2">Select Date & Time</label>
-                                    <input type="datetime-local" id="date-input" 
+                                    <label for="date-input"
+                                        class="block text-xs font-mono text-slate-500 uppercase mb-2">Select Date &
+                                        Time</label>
+                                    <input type="datetime-local" id="date-input"
                                         class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 font-mono text-sm text-slate-200 input-focus transition-colors [color-scheme:dark]">
                                 </div>
-                                
+
                                 <div class="flex gap-2">
-                                    <button id="btn-current-time" class="px-4 py-2.5 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 transition-colors uppercase tracking-tight">Use Current Time</button>
+                                    <button id="btn-current-time"
+                                        class="px-4 py-2.5 bg-slate-800 border border-slate-700 rounded text-xs font-mono hover:bg-slate-700 transition-colors uppercase tracking-tight">Use
+                                        Current Time</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div id="date-output-container" class="bg-slate-800/30 border border-slate-800 rounded-xl p-6 hidden">
+                        <div id="date-output-container"
+                            class="bg-slate-800/30 border border-slate-800 rounded-xl p-6 hidden">
                             <h3 class="text-xs font-mono text-slate-500 uppercase mb-4">Generated ObjectID</h3>
-                            
+
                             <div class="space-y-4">
                                 <div>
                                     <div class="flex justify-between items-center mb-2">
-                                        <span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Resulting ID</span>
-                                        <button data-copy="generated-oid" class="p-2 -mr-2 text-[10px] font-mono text-accent hover:text-white uppercase transition-colors">Copy</button>
+                                        <span
+                                            class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Resulting
+                                            ID</span>
+                                        <button data-copy="generated-oid"
+                                            class="p-2 -mr-2 text-[10px] font-mono text-accent hover:text-white uppercase transition-colors">Copy</button>
                                     </div>
-                                    <p id="generated-oid" class="text-lg font-mono text-white break-all tracking-wider selection:bg-accent selection:text-slate-900"></p>
+                                    <p id="generated-oid"
+                                        class="text-lg font-mono text-white break-all tracking-wider selection:bg-accent selection:text-slate-900">
+                                    </p>
                                 </div>
-                                <p class="text-[10px] text-slate-500 italic">Note: The last 16 characters are zeroed out as they represent machine/process/counter info.</p>
+                                <p class="text-[10px] text-slate-500 italic">Note: The last 16 characters are zeroed out
+                                    as they represent machine/process/counter info.</p>
                             </div>
                         </div>
                     </section>
@@ -313,7 +337,7 @@
                 localTimeDisplay.textContent = date.toString();
                 isoTimeDisplay.textContent = date.toISOString();
                 relativeTimeDisplay.textContent = MongoIDConverter.getRelativeTime(date);
-                
+
                 oidOutputContainer.classList.remove('hidden');
                 oidError.classList.add('hidden');
                 oidInput.classList.add('border-accent/50');
@@ -361,7 +385,7 @@
             button.addEventListener('click', () => {
                 const targetId = button.getAttribute('data-copy');
                 const text = document.getElementById(targetId).textContent;
-                
+
                 navigator.clipboard.writeText(text).then(() => {
                     const originalText = button.textContent;
                     button.textContent = 'Copied!';
