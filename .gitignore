@@ -14,3 +14,7 @@ Thumbs.db
 
 # gemini
 .gemini/
+
+# conductor
+conductor/tracks.md
+conductor/tracks
