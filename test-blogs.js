@@ -39,6 +39,19 @@ if (fs.existsSync(mainIndex)) {
     assert(content.includes('href="/blogs/"'), 'Main index.html should link to /blogs/');
 }
 
+// Check first blog post existence and basic structure
+const firstPostPath = path.join(blogsDir, 'first-post.html');
+assert(fs.existsSync(firstPostPath), 'blogs/first-post.html should exist');
+
+if (fs.existsSync(firstPostPath)) {
+    const content = fs.readFileSync(firstPostPath, 'utf8');
+    assert(content.includes('Back to Blogs'), 'Should contain "Back to Blogs" link');
+    assert(content.includes('Jan 25, 2026'), 'Should contain publication date');
+    assert(content.includes('Pravinkanna Parthiban'), 'Should contain author name "Pravinkanna Parthiban"');
+    assert(content.includes('blog-content'), 'Should contain container with class or id "blog-content"');
+    assert(content.includes('prism'), 'Should include Prism.js');
+}
+
 if (failedCount > 0) {
     console.error(`
 ${failedCount} tests failed.`);

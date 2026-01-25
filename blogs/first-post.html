@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World: My First Blog Post | Pravinkanna</title>
+    <meta name="description"
+        content="The beginning of my journey in sharing thoughts on software engineering and distributed systems.">
+    <link rel="canonical" href="https://pravinkanna.com/blogs/first-post.html">
+
+    <!-- Styles -->
+    <link href="../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-slate-900 text-slate-200 font-sans antialiased">
+    <div id="app" class="min-h-screen flex flex-col">
+        <!-- Navigation -->
+        <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="../" class="text-accent font-mono font-bold text-xl tracking-tighter">
+                            pravin<span class="text-slate-500">.dev</span>
+                        </a>
+                    </div>
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-8 font-mono text-sm">
+                            <a href="../#home" class="hover:text-accent px-3 py-2 transition-colors">Home</a>
+                            <a href="../#about" class="hover:text-accent px-3 py-2 transition-colors">Experience</a>
+                            <a href="../#skills" class="hover:text-accent px-3 py-2 transition-colors">Skills</a>
+                            <a href="../#projects" class="hover:text-accent px-3 py-2 transition-colors">Projects</a>
+                            <a href="/tools/" class="hover:text-accent px-3 py-2 transition-colors">Tools</a>
+                            <a href="/blogs/" class="text-accent px-3 py-2 transition-colors">Blogs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-grow">
+            <article class="py-24">
+                <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="mb-12">
+                        <a href="/blogs/" class="text-accent font-mono text-sm hover:underline flex items-center gap-2 mb-8">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                            Back to Blogs
+                        </a>
+                        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Hello World: My First Blog Post</h1>
+                        <div class="flex items-center gap-4 text-slate-500 font-mono text-sm">
+                            <span>Pravinkanna Parthiban</span>
+                            <span>•</span>
+                            <span>Jan 25, 2026</span>
+                            <span>•</span>
+                            <span>2 min read</span>
+                        </div>
+                    </div>
+
+                    <div id="blog-content" class="prose prose-invert prose-slate max-w-none text-slate-400 leading-relaxed space-y-6">
+                        <p class="text-lg">
+                            Welcome to my blog! This is a minimal, static blog system built with raw HTML and Tailwind CSS. 
+                            I decided to go with this approach for maximum performance and simplicity.
+                        </p>
+                        
+                        <h2 class="text-2xl font-bold text-white mt-12 mb-4">Why Static HTML?</h2>
+                        <p>
+                            In a world of complex frontend frameworks and heavy CMS solutions, there's something beautiful 
+                            about plain HTML files. They are fast, SEO-friendly, and easy to maintain. 
+                        </p>
+
+                        <p>
+                            Stay tuned for more posts about Go, Kubernetes, and distributed systems.
+                        </p>
+
+                        <h3 class="text-xl font-bold text-white mt-8 mb-4">Sample Go Code</h3>
+                        <pre class="language-go rounded-lg overflow-hidden shadow-2xl border border-slate-800"><code class="language-go">package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello from the static blog!")
+}</code></pre>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-12 border-t border-slate-800 bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-accent font-mono font-bold text-xl tracking-tighter">
+                    pravin<span class="text-slate-500">.dev</span>
+                </div>
+                <div class="text-slate-500 text-sm font-mono">
+                    &copy; 2026 Pravinkanna Parthiban
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-go.min.js"></script>
+</body>
+
+</html>
