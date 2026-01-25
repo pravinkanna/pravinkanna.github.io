@@ -52,6 +52,32 @@ if (fs.existsSync(firstPostPath)) {
     assert(content.includes('prism'), 'Should include Prism.js');
 }
 
+// SEO Verification
+console.log('Verifying SEO Configuration...');
+
+if (fs.existsSync(blogsIndex)) {
+    const content = fs.readFileSync(blogsIndex, 'utf8');
+    assert(content.includes('<title>Blogs | Pravinkanna</title>'), 'Blogs index should have correct title');
+    assert(content.includes('name="description"'), 'Blogs index should have description meta tag');
+}
+
+if (fs.existsSync(firstPostPath)) {
+    const content = fs.readFileSync(firstPostPath, 'utf8');
+    assert(content.includes('<title>Hello World: My First Blog Post | Pravinkanna</title>'), 'First post should have unique title');
+    assert(content.includes('name="description"'), 'First post should have description meta tag');
+}
+
+// Sitemap Verification
+console.log('Verifying Sitemap...');
+const sitemapPath = path.join(__dirname, 'sitemap.xml');
+assert(fs.existsSync(sitemapPath), 'sitemap.xml should exist');
+
+if (fs.existsSync(sitemapPath)) {
+    const content = fs.readFileSync(sitemapPath, 'utf8');
+    assert(content.includes('<loc>https://pravinkanna.com/blogs/</loc>'), 'Sitemap should contain /blogs/');
+    assert(content.includes('<loc>https://pravinkanna.com/blogs/first-post.html</loc>'), 'Sitemap should contain first-post.html');
+}
+
 if (failedCount > 0) {
     console.error(`
 ${failedCount} tests failed.`);
